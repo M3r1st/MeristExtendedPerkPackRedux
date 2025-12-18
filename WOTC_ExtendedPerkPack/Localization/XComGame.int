@@ -1,0 +1,848 @@
+[F_ShootAnyone X2AbilityTemplate]
+LocFriendlyName="Shoot Anyone"
+LocFlyOverText="Shoot Anyone"
+LocLongDescription="Shoot Anyone"
+LocHelpText="Shoot Anyone"
+LocPromotionPopupText=""
+
+[F_ChipAway X2AbilityTemplate]
+LocFriendlyName="Chip Away"
+LocFlyOverText="Chip Away"
+LocLongDescription="Take a <Ability:F_BoundWeaponName> shot that shreds additional armor. Uses <Ability:SelfAmmoCost> ammo. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Special <Ability:F_BoundWeaponName> shot that shreds additional armor. Uses <Ability:SelfAmmoCost> ammo."
+LocPromotionPopupText="<Bullet> Shreds <Ability:F_ChipAway_ShredBonuses> additional armor depending on the weapon tier.<br><Bullet> Consumes <Ability:SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_ChipAway_Bonuses X2AbilityTemplate]
+LocFriendlyName="Chip Away"
+LocFlyOverText="Chip Away"
+
+[F_Concentration X2AbilityTemplate]
+LocFriendlyName="Concentration"
+LocFlyOverText="Concentration"
+LocLongDescription="Your grazing attacks are automatically upgraded to normal hits."
+LocHelpText="Your grazing attacks are automatically upgraded to normal hits."
+LocPromotionPopupText="<Bullet> Attacks that would normally graze their target are automatically upgraded to normal hits.<br><Bullet> Applies to all attacks."
+
+[F_LikeLightning X2AbilityTemplate]
+LocFriendlyName="Like Lightning"
+LocFlyOverText="Like Lightning"
+LocLongDescription="When Run and Gun is activated, your Arc Thrower cooldown is immediately removed, and your next Arc Thrower shot this turn will not cost an action."
+LocHelpText="When Run and Gun is activated, your Arc Thrower cooldown is immediately removed, and your next Arc Thrower shot this turn will not cost an action."
+LocPromotionPopupText="<Bullet> When Run and Gun is activated, your Arc Thrower cooldown is immediately removed, and your next Arc Thrower shot this turn does not cost an action.<br><Bullet> Applies to <Ability:LikeLightning_AllowedAbilities>."
+
+[F_LikeLightning_Refund X2AbilityTemplate]
+LocFriendlyName="Like Lightning"
+LocFlyOverText="Like Lightning"
+
+[F_StationaryThreat X2AbilityTemplate]
+LocFriendlyName="Stationary Threat"
+LocFlyOverText="Stationary Threat"
+LocLongDescription="Your <Ability:F_BoundWeaponName> attacks deal +<Ability:F_StationaryThreat_DamagePerTurn> damage for each turn that you do not move. Stacks up to <Ability:F_StationaryThreat_MaxTurns> times."
+LocHelpText="Your <Ability:F_BoundWeaponName> attacks deal +<Ability:F_StationaryThreat_DamagePerTurn> damage for each turn that you do not move. Stacks up to <Ability:F_StationaryThreat_MaxTurns> times."
+LocPromotionPopupText=""
+
+[F_Opportunist X2AbilityTemplate]
+LocFriendlyName="Opportunist"
+LocFlyOverText="Opportunist"
+LocLongDescription="Your reaction fire ignores half of the cover bonus."
+LocHelpText="Your reaction fire ignores half of the cover bonus."
+LocPromotionPopupText="<Bullet> Only applies to reaction fire.<br><Bullet> Does not apply to attacks that ignore cover."
+
+[F_Maim X2AbilityTemplate]
+LocFriendlyName="Maim"
+LocFlyOverText="Maim"
+LocLongDescription="Take a <Ability:F_BoundWeaponName> shot that immobilizes the target until the end of their next turn. Uses <Ability:SelfAmmoCost> ammo. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Special <Ability:F_BoundWeaponName> shot that immobilizes the target until the end of their next turn. Uses <Ability:SelfAmmoCost> ammo."
+LocPromotionPopupText="<Bullet> Useful to isolate a high value target during an ambush.<br><Bullet> Consumes <Ability:SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_QuickPatch X2AbilityTemplate]
+LocFriendlyName="Quick Patch"
+LocFlyOverText="Quick Patch"
+LocLongDescription="Using a medikit does not cost an action."
+LocHelpText="Using a medikit does not cost an action."
+LocPromotionPopupText="<Bullet> Applies to <Ability:QuickPatch_AllowedAbilities>."
+
+[F_Preservation X2AbilityTemplate]
+LocFriendlyName="Preservation"
+LocFlyOverText="Preservation"
+LocLongDescription="When your concealment is broken, gain +<Ability:F_Preservation_DefenseBonus> defense for <Ability:F_Preservation_Duration> turns."
+LocHelpText="When your concealment is broken, gain +<Ability:F_Preservation_DefenseBonus> defense for <Ability:F_Preservation_Duration> turns."
+LocPromotionPopupText=""
+
+[F_Preservation_Passive X2AbilityTemplate]
+LocFriendlyName="Preservation"
+LocFlyOverText="Preservation"
+LocLongDescription="When your concealment is broken, gain +<Ability:F_Preservation_DefenseBonus> defense for <Ability:F_Preservation_Duration> turns."
+LocHelpText="When your concealment is broken, gain +<Ability:F_Preservation_DefenseBonus> defense for <Ability:F_Preservation_Duration> turns."
+LocPromotionPopupText=""
+
+[F_LickYourWounds X2AbilityTemplate]
+LocFriendlyName="Lick Your Wounds"
+LocFlyOverText="Lick Your Wounds"
+LocLongDescription="Hunker Down restores <Ability:F_LickYourWounds_HealAmount> HP when used, up to a maximum of <Ability:F_LickYourWounds_MaxHealAmount> per mission, and removes poison, burning, and acid burning."
+LocHelpText="Hunker Down restores <Ability:F_LickYourWounds_HealAmount> HP when used and removes poison, burning, and acid burning."
+LocPromotionPopupText="<Bullet> Removes the same status effects as a medikit.<br><Bullet> Applies to <Ability:LickYourWounds_AllowedAbilities>."
+
+[F_LickYourWounds_Passive X2AbilityTemplate]
+LocFriendlyName="Lick Your Wounds"
+LocFlyOverText="Lick Your Wounds"
+LocLongDescription="Hunker Down restores <Ability:F_LickYourWounds_HealAmount> HP when used, up to a maximum of <Ability:F_LickYourWounds_MaxHealAmount> per mission, and removes poison, burning, and acid burning."
+LocHelpText="Hunker Down restores <Ability:F_LickYourWounds_HealAmount> HP when used and removes poison, burning, and acid burning."
+LocPromotionPopupText="<Bullet> Removes the same status effects as a medikit.<br><Bullet> Applies to <Ability:LickYourWounds_AllowedAbilities>."
+
+[F_Momentum X2AbilityTemplate]
+LocFriendlyName="Impulse"
+LocFlyOverText="Impulse"
+LocLongDescription="Gain +<Ability:F_Momentum_AimBonus> aim and +<Ability:F_Momentum_CritBonus> critical chance if you have moved this turn."
+LocHelpText="Gain +<Ability:F_Momentum_AimBonus> aim and +<Ability:F_Momentum_CritBonus> critical chance if you have moved this turn."
+LocPromotionPopupText=""
+
+[F_ThousandsToGo X2AbilityTemplate]
+LocFriendlyName="Thousands to Go"
+LocFlyOverText="Thousands to Go"
+LocLongDescription="Once per turn, gain a non-movement action after killing an enemy with your <Ability:F_BoundWeaponName>."
+LocHelpText="Once per turn, gain a non-movement action after killing an enemy with your <Ability:F_BoundWeaponName>."
+LocPromotionPopupText="<Bullet> Does not activate when killing the Lost."
+
+[F_ThousandsToGo_Passive X2AbilityTemplate]
+LocFriendlyName="Thousands to Go"
+LocFlyOverText="Thousands to Go"
+LocLongDescription="Once per turn, gain a non-movement action after killing an enemy with your <Ability:F_BoundWeaponName>."
+LocHelpText="Once per turn, gain a non-movement action after killing an enemy with your <Ability:F_BoundWeaponName>."
+LocPromotionPopupText="<Bullet> Does not activate when killing the Lost."
+
+[F_Recharge X2AbilityTemplate]
+LocFriendlyName="Recharge"
+LocFlyOverText="Recharge"
+LocLongDescription="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldown of all abilities by <Ability:F_Recharge_CooldownReduction>."
+LocHelpText="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldown of all abilities by <Ability:F_Recharge_CooldownReduction>."
+LocPromotionPopupText="<Bullet> Abilities without a cooldown are unaffected.<br><Bullet> Does not activate when killing the Lost."
+
+[F_Recharge_Passive X2AbilityTemplate]
+LocFriendlyName="Recharge"
+LocFlyOverText="Recharge"
+LocLongDescription="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldown of all abilities by <Ability:F_Recharge_CooldownReduction>."
+LocHelpText="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldown of all abilities by <Ability:F_Recharge_CooldownReduction>."
+LocPromotionPopupText="<Bullet> Abilities without a cooldown are unaffected.<br><Bullet> Does not activate when killing the Lost."
+
+[F_PierceTheVeil X2AbilityTemplate]
+LocFriendlyName="Pierce the Veil"
+LocFlyOverText="Pierce the Veil"
+LocLongDescription="Atomized."
+LocHelpText="Atomized."
+LocPromotionPopupText=""
+
+[F_TheBiggerTheyAre X2AbilityTemplate]
+LocFriendlyName="The Bigger They Are"
+LocFlyOverText="The Bigger They Are"
+LocLongDescription="Gain +<Ability:F_TheBiggerTheyAre_AimBonus> aim against enemies that cannot take cover."
+LocHelpText="Gain +<Ability:F_TheBiggerTheyAre_AimBonus> aim against enemies that cannot take cover."
+LocPromotionPopupText="<Bullet> Enemies that cannot take cover include, but are not limited to: Chryssalids, MECs, and Berserkers."
+
+[F_CallForFire X2AbilityTemplate]
+LocFriendlyName="Call for Fire"
+LocFlyOverText="Call for Fire"
+LocLongDescription="Enter overwatch. All allies within <Ability:F_CallForFire_Radius> tile(s) also enter overwatch. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Enter overwatch. All allies within <Ability:F_CallForFire_Radius> tile(s) also enter overwatch."
+LocPromotionPopupText="<Bullet> Requires a single action and ends the turn.<br><Bullet> Allies affected by this ability will not automatically end their turn.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_LockNLoad X2AbilityTemplate]
+LocFriendlyName="Lock 'N Load"
+LocFlyOverText="Lock 'N Load"
+LocLongDescription="Kills with your <Ability:F_BoundWeaponName> restore <Ability:F_LockNLoad_AmmoToReload> ammo."
+LocHelpText="Kills with your <Ability:F_BoundWeaponName> restore <Ability:F_LockNLoad_AmmoToReload> ammo."
+LocPromotionPopupText=""
+
+[F_LockNLoad_Passive X2AbilityTemplate]
+LocFriendlyName="Lock 'N Load"
+LocFlyOverText="Lock 'N Load"
+LocLongDescription="Kills with your <Ability:F_BoundWeaponName> restore <Ability:F_LockNLoad_AmmoToReload> ammo."
+LocHelpText="Kills with your <Ability:F_BoundWeaponName> restore <Ability:F_LockNLoad_AmmoToReload> ammo."
+LocPromotionPopupText=""
+
+[F_Imposition X2AbilityTemplate]
+LocFriendlyName="Imposition"
+LocFlyOverText="Imposition"
+LocLongDescription="Your standard <Ability:F_BoundWeaponName> shots, hit or miss, reduce the target's aim by <Ability:F_Imposition_AimPenalty> for <Ability:F_Imposition_Duration> turn(s)."
+LocHelpText="Your standard <Ability:F_BoundWeaponName> shots, hit or miss, reduce the target's aim by <Ability:F_Imposition_AimPenalty> for <Ability:F_Imposition_Duration> turn(s)."
+LocPromotionPopupText="<Bullet> Only applies to <Ability:F_BoundWeaponName> attacks.<br><Bullet> The aim penalty does not stack."
+
+[F_TrenchWarfare X2AbilityTemplate]
+LocFriendlyName="Trench Warfare"
+LocFlyOverText="Trench Warfare"
+LocLongDescription="If you get at least one kill during your turn, automatically Hunker Down at the end of it."
+LocHelpText="If you get at least one kill during your turn, automatically Hunker Down at the end of it."
+LocPromotionPopupText="<Bullet> You will only Hunker Down if you would normally be able to.<br><Bullet> If a Ballistic Shield is equipped, then you will use Shield Wall instead."
+
+[F_TrenchWarfare_Activation X2AbilityTemplate]
+LocFriendlyName="Trench Warfare"
+LocFlyOverText="Trench Warfare"
+
+[F_TrenchWarfare_Passive X2AbilityTemplate]
+LocFriendlyName="Trench Warfare"
+LocFlyOverText="Trench Warfare"
+LocLongDescription="If you get at least one kill during your turn, automatically Hunker Down at the end of it."
+LocHelpText="If you get at least one kill during your turn, automatically Hunker Down at the end of it."
+LocPromotionPopupText="<Bullet> You will only Hunker Down if you would normally be able to.<br><Bullet> If a Ballistic Shield is equipped, then you will use Shield Wall instead."
+
+[F_Compensation X2AbilityTemplate]
+LocFriendlyName="Compensation"
+LocFlyOverText="Compensation"
+LocLongDescription="Once per turn, gain a standard action point after taking a standard sniper shot."
+LocHelpText="Once per turn, gain a standard action point after taking a standard sniper shot."
+LocPromotionPopupText="<Bullet> Can only activate once per turn."
+
+[F_FirstStrike X2AbilityTemplate]
+LocFriendlyName="Surprise"
+LocFlyOverText="Surprise"
+LocLongDescription="Your <Ability:F_BoundWeaponName> attacks deal +<Ability:F_FirstStrike_ConcealedDamageBonus> damage while concealed and +<Ability:F_FirstStrike_FlankingDamageBonus> damage while flanking the target."
+LocHelpText="Your <Ability:F_BoundWeaponName> attacks deal +<Ability:F_FirstStrike_ConcealedDamageBonus> damage while concealed and +<Ability:F_FirstStrike_FlankingDamageBonus> damage while flanking the target."
+LocPromotionPopupText=""
+
+[F_DisablingShot X2AbilityTemplate]
+LocFriendlyName="Disabling Shot"
+LocFlyOverText="Disabling Shot"
+LocLongDescription="Take a <Ability:F_BoundWeaponName> shot that stuns the target for <Ability:F_DisablingShot_StunDuration> action(s). Cannot crit. Uses <Ability:SelfAmmoCost> ammo. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Special <Ability:F_BoundWeaponName> shot that stuns the target for <Ability:F_DisablingShot_StunDuration> action(s). Cannot critically hit. Uses <Ability:SelfAmmoCost> ammo."
+LocPromotionPopupText="<Bullet> Cannot crit.<br><Bullet> Consumes <Ability:SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_Blend X2AbilityTemplate]
+LocFriendlyName="Blend"
+LocFlyOverText="Blend"
+LocLongDescription="Immediately enter concealment that is automatically broken after <Ability:F_Blend_Duration> turn(s). <Ability:F_FreeAction>. Usable once per mission."
+LocHelpText="Immediately enter concealment that is automatically broken after <Ability:F_Blend_Duration> turn(s)."
+LocPromotionPopupText="<Bullet> The concealment will be broken at the start of the player's turn.<br><Bullet> <Ability:F_FreeAction>.<br><Bullet> Usable once per mission."
+
+[F_Botnet X2AbilityTemplate]
+LocFriendlyName="Botnet"
+LocFlyOverText="Botnet"
+LocLongDescription="Activate to allow your allies' standard shots to reduce the target's hack defense by <Ability:F_Botnet_HackPenalty>. <Ability:F_FreeAction>. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Activate to allow your allies' standard shots to reduce the target's hack defense by <Ability:F_Botnet_HackPenalty>."
+LocPromotionPopupText="<Bullet> Lasts for <Ability:F_Botnet_Duration> turn(s) after activation.<br><Bullet> Hack defense reduction stacks and lasts indefinitely.<br><Bullet> <Ability:F_FreeAction>.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_ReadyForAnything X2AbilityTemplate]
+LocFriendlyName="Ready for Anything"
+LocFlyOverText="Ready for Anything"
+LocLongDescription="Once per turn, immediately enter overwatch after taking a standard shot with your <Ability:F_BoundWeaponName>."
+LocHelpText="Once per turn, immediately enter overwatch after taking a standard shot with your <Ability:F_BoundWeaponName>."
+LocPromotionPopupText="<Bullet> Will not activate if the <Ability:ClassName> is disoriented, stunned, panicking, on fire or otherwise impaired.<br><Bullet> Will not activate if the <Ability:ClassName> doesn't have enough ammo for overwatch."
+
+[F_ReadyForAnything_Passive X2AbilityTemplate]
+LocFriendlyName="Ready for Anything"
+LocFlyOverText="Ready for Anything"
+LocLongDescription="Once per turn, immediately enter overwatch after taking a standard shot with your <Ability:F_BoundWeaponName>."
+LocHelpText="Once per turn, immediately enter overwatch after taking a standard shot with your <Ability:F_BoundWeaponName>."
+LocPromotionPopupText="<Bullet> Will not activate if the <Ability:ClassName> is disoriented, stunned, panicking, on fire or otherwise impaired.<br><Bullet> Will not activate if the <Ability:ClassName> doesn't have enough ammo for overwatch."
+
+[F_Resupply X2AbilityTemplate]
+LocFriendlyName="Resupply"
+LocFlyOverText="Resupply"
+LocLongDescription="Refill the primary weapon ammo of all allies. Has <Ability:F_SelfCharges> charge(s) per mission."
+LocHelpText="Refill the primary weapon ammo of all allies. Has <Ability:F_SelfCharges> charge(s) per mission."
+LocPromotionPopupText=""
+
+[F_Immunize X2AbilityTemplate]
+LocFriendlyName="Immunize"
+LocFlyOverText="Immunize"
+LocLongDescription="Send the GREMLIN to an ally, granting them immunity to damage until the beginning of next turn. Has <Ability:F_SelfCharges> charge(s) per mission."
+LocHelpText="Send the GREMLIN to an ally, granting them immunity to damage until the beginning of next turn. Has <Ability:F_SelfCharges> charge(s) per mission."
+LocPromotionPopupText=""
+
+[F_Rush X2AbilityTemplate]
+LocFriendlyName="Rush"
+LocFlyOverText="Rush"
+LocLongDescription="Run towards an enemy and stab them with your <Ability:F_BoundWeaponName>. Can only perform with single-action moves."
+LocHelpText="Run towards an enemy and stab them with your <Ability:F_BoundWeaponName>. Can only perform with single-action moves."
+LocPromotionPopupText="<Bullet> Requires a single action and doesn't end the turn.<br><Bullet> Can be used while disoriented."
+
+[F_AmmoConservation X2AbilityTemplate]
+LocFriendlyName="Ammo Conservation"
+LocFlyOverText="Ammo Conservation"
+LocLongDescription="Activate to make all your <Ability:WeaponName> attacks refund the ammo they consume for <Ability:F_AmmoConservation_Duration> turn(s). <Ability:F_FreeAction>. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Activated ability that does not cost an action point. For the remainder of this turn, your ammo will be refunded after each shot you take. <Ability:AMMOCONSERVATION_COOLDOWN> turn cooldown."
+LocPromotionPopupText="<Bullet> Also applies to your <Ability:SecondaryWeaponName>.<br><Bullet> The <Ability:ClassName> will still have to fulfill the abilities' ammo requirements to activate them.<br><Bullet> <Ability:F_FreeAction>.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_WellProtected_ X2AbilityTemplate]
+LocFriendlyName="Well Protected"
+LocFlyOverText="Well Protected"
+LocLongDescription="Grants a vest-only utility slot."
+LocHelpText="Grants a vest-only utility slot."
+LocPromotionPopupText=""
+
+[F_Dedication X2AbilityTemplate]
+LocFriendlyName="Dedication"
+LocFlyOverText="Dedication"
+LocLongDescription="Activate to gain +<Ability:F_Dedication_MobilityBonus> mobility and allow the <Ability:ClassName> to ignore reaction fire for <Ability:F_Dedication_Duration> turn(s). <Ability:F_FreeAction>. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Activate to gain +<Ability:F_Dedication_MobilityBonus> mobility and allow the <Ability:ClassName> to ignore reaction fire for <Ability:F_Dedication_Duration> turn(s)."
+LocPromotionPopupText="<Bullet> Gain <Ability:DEDICATION_MOBILITY> mobility and ignore reaction fire for the rest of the turn.<br><Bullet> <Ability:F_FreeAction>.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_Triage X2AbilityTemplate]
+LocFriendlyName="Triage"
+LocFlyOverText="Triage"
+LocLongDescription="Restore <Ability:F_Triage_HealAmount> HP to yourself and all organic allies within <Ability:F_Triage_Radius> tile(s). Removes poison, burning, and acid burning. Has <Ability:F_SelfCharges> charge(s) per mission."
+LocHelpText="Restore <Ability:F_Triage_HealAmount> HP to yourself and all organic allies within <Ability:F_Triage_Radius> tile(s). Removes poison, burning, and acid burning."
+LocPromotionPopupText="<Bullet> Can be used while burning.<br><Bullet> Requires a single action and ends the turn.<br><Bullet> Removes the same status effects as a medikit.<br><Bullet> Has <Ability:F_SelfCharges> charge(s) per mission."
+
+[F_Steadfast X2AbilityTemplate]
+LocFriendlyName="Steadfast"
+LocFlyOverText="Steadfast"
+LocLongDescription="Grants immunity to negative mental conditions including panic, mind control, stuns, and disorientation."
+LocHelpText="Grants immunity to negative mental conditions including panic, mind control, stuns, and disorientation."
+LocPromotionPopupText=""
+
+[F_Corpsman X2AbilityTemplate]
+LocFriendlyName="Corpsman"
+LocFlyOverText="Corpsman"
+LocLongDescription="Grants a free medikit."
+LocHelpText="Grants a free medikit."
+LocPromotionPopupText=""
+
+[F_FieldMedic X2AbilityTemplate]
+LocFriendlyName="Field Medic"
+LocLongDescription="Equipped medikits have <Ability:F_FieldMedic_BonusChargesPerItem> extra charges."
+LocHelpText="Equipped medikits have <Ability:F_FieldMedic_BonusChargesPerItem> extra charges."
+LocPromotionPopupText="<Bullet> Applies to the free medikit provided by Corpsman."
+
+[F_Stimulate X2AbilityTemplate]
+LocFriendlyName="Stimulate"
+LocFlyOverText="Stimulate"
+LocLongDescription="Remove negative mental status effects from an adjacent ally. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Remove negative mental status effects from an adjacent ally."
+LocPromotionPopupText="<Bullet> Requires a single action and doesn't end the turn.<br><Bullet> Removes the same status effects as Revival Protocol: Disoriented, Stunned, Panicked, and Unconscious."
+
+[F_Bloodlet X2AbilityTemplate]
+LocFriendlyName="Bloodlet"
+LocFlyOverText="Bloodlet"
+LocLongDescription="Your standard shots cause bleeding."
+LocHelpText="Your standard shots cause bleeding."
+LocPromotionPopupText="<Bullet> Bleeding deals <Ability:F_Bloodlet_DamagePerTurn> damage per turn and lasts for <Ability:F_Bloodlet_Duration> turn(s).<br><Bullet> Applies to standard shots from any weapon."
+
+[F_BlindingFire X2AbilityTemplate]
+LocFriendlyName="Blinding Fire"
+LocFlyOverText="Blinding Fire"
+LocLongDescription="Fire at enemies in a cone with an aim penalty of -<Ability:F_BlindingFire_ToHitPenalty>. Reduces the aim of all targets by <Ability:F_BlindingFire_AimPenalty> for <Ability:F_BlindingFire_Duration> turn(s). Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Fire at enemies in a cone with an aim penalty of -<Ability:F_BlindingFire_ToHitPenalty>. Reduces the aim of all targets by <Ability:F_BlindingFire_AimPenalty> for <Ability:F_BlindingFire_Duration> turn(s)."
+LocPromotionPopupText="<Bullet> Cannot crit.<br><Bullet> The aim penalty is applied even if the attack misses.<br><Bullet> The aim penalty does not stack.<br><Bullet> Consumes <Ability:SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_QuickFeet X2AbilityTemplate]
+LocFriendlyName="Quick Feet"
+LocFlyOverText="Quick Feet"
+LocLongDescription="Gain a standard action point whenever you are revealed from concealment via your own action."
+LocHelpText="Gain a standard action point whenever you are revealed from concealment via your own action."
+LocPromotionPopupText="<Bullet> Does not activate if concealment is broken by an ability that doesn't cost any actions."
+
+[F_QuickFeet_Passive X2AbilityTemplate]
+LocFriendlyName="Quick Feet"
+LocFlyOverText="Quick Feet"
+LocLongDescription="Gain a standard action point whenever you are revealed from concealment via your own action."
+LocHelpText="Gain a standard action point whenever you are revealed from concealment via your own action."
+LocPromotionPopupText="<Bullet> Does not activate if concealment is broken by an ability that doesn't cost any actions."
+
+[F_CombatDrugs X2AbilityTemplate]
+LocFriendlyName="Combat Stimulants"
+LocFlyOverText="Combat Stimulants"
+LocLongDescription="Your smoke grenades confers +<Ability:F_CombatDrugs_AimBonus> aim and +<Ability:F_CombatDrugs_CritBonus> critical chance to units in the smoke cloud."
+LocHelpText="Your smoke grenades confers +<Ability:F_CombatDrugs_AimBonus> aim and +<Ability:F_CombatDrugs_CritBonus> critical chance to units in the smoke cloud."
+LocPromotionPopupText="<Bullet> The effect persists for as long as the unit remains in the smoke.<br><Bullet> The effect will be applied if the unit enters the smoke after it's deployed.<br><Bullet> Doesn't apply to mechanical units.<br><Bullet> Applies to enemy units."
+
+[F_SaltInTheWound X2AbilityTemplate]
+LocFriendlyName="Salt in the Wound"
+LocFlyOverText="Salt in the Wound"
+LocLongDescription="All your attacks and effects deal +<Ability:F_SaltInTheWound_DamageBonus> damage to targets suffering from bleeding, poison, burning, or acid burning."
+LocHelpText="All your attacks and effects deal +<Ability:F_SaltInTheWound_DamageBonus> damage to targets suffering from bleeding, poison, burning, or acid burning."
+LocPromotionPopupText="<Bullet> Damage-over-time effects applied by the <Ability:ClassName> will benefit from the damage bonus.<br><Bullet> The damage bonus does not increase if the target is suffering from multiple valid effects."
+
+[F_Unload X2AbilityTemplate]
+LocFriendlyName="Unload"
+LocFlyOverText="Unload"
+LocLongDescription="Fire your <Ability:F_BoundWeaponName> at the target until you run out of ammo or the target is dead. Shots cannot critically hit and deal less damage than a standard shot. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Fire your <Ability:F_BoundWeaponName> at the target until you run out of ammo or the target is dead. Shots cannot critically hit and deal less damage than a standard shot."
+LocPromotionPopupText="<Bullet> Shots cannot crit.<br><Bullet> Each shot has an aim penalty of -<Ability:F_Unload_ToHitMod> and deals <Ability:F_Unload_DamagePenalty>% less damage than a standard shot.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_Unload2 X2AbilityTemplate]
+LocFriendlyName="Unload"
+LocFlyOverText="Unload"
+
+[F_Unload_Damage X2AbilityTemplate]
+LocFriendlyName="Unload"
+LocFlyOverText="Unload"
+
+[F_Ambush X2AbilityTemplate]
+LocFriendlyName="Ambush"
+LocFlyOverText="Ambush"
+LocLongDescription="Take a reaction shot against any enemy that moves or attacks within a cone of fire. Can only be used while concealed."
+LocHelpText="Take a reaction shot against any enemy that moves or attacks within a cone of fire. Can only be used while concealed."
+LocPromotionPopupText="<Bullet> There is no limit to the amount of Ambush shots a <Ability:ClassName> can take outside of the ammo count.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_Ambush_Attack X2AbilityTemplate]
+LocFriendlyName="Ambush"
+LocFlyOverText="Ambush"
+
+[F_Renewal X2AbilityTemplate]
+LocFriendlyName="Renewal"
+LocFlyOverText="Renewal"
+LocLongDescription="At the start of each turn, restore <Ability:F_Renewal_HealAmount> HP to yourself and all organic allies within <Ability:F_Renewal_Radius> tile(s)."
+LocHelpText="At the start of each turn, restore <Ability:F_Renewal_HealAmount> HP to yourself and all organic allies within <Ability:F_Renewal_Radius> tile(s)."
+LocPromotionPopupText="<Bullet> Each soldier can gain up to <Ability:F_Renewal_MaxHealAmount> HP per mission from this ability. This value is shared between all sources."
+
+[F_Renewal_Passive X2AbilityTemplate]
+LocFriendlyName="Renewal"
+LocFlyOverText="Renewal"
+LocLongDescription="At the start of each turn, restore <Ability:F_Renewal_HealAmount> HP to yourself and all organic allies within <Ability:F_Renewal_Radius> tile(s)."
+LocHelpText="At the start of each turn, restore <Ability:F_Renewal_HealAmount> HP to yourself and all organic allies within <Ability:F_Renewal_Radius> tile(s)."
+LocPromotionPopupText="<Bullet> Each soldier can gain up to <Ability:F_Renewal_MaxHealAmount> HP per mission from this ability. This value is shared between all sources."
+
+[F_WarningShot X2AbilityTemplate]
+LocFriendlyName="Warning Shot"
+LocFlyOverText="Warning Shot"
+LocLongDescription="Fire your <Ability:F_BoundWeaponName> just over the target's head, causing them to panic. This attack deals no damage. Uses <Ability:SelfAmmoCost> ammo. Has <Ability:F_SelfCharges> charge(s) per mission."
+LocHelpText="Fire your <Ability:F_BoundWeaponName> just over the target's head, causing them to panic. This attack deals no damage. Uses <Ability:SelfAmmoCost> ammo."
+LocPromotionPopupText="<Bullet> Consumes <Ability:SelfAmmoCost> ammo.<br><Bullet> Has <Ability:F_SelfCharges> charge(s) per mission."
+
+[F_OpenFire X2AbilityTemplate]
+LocFriendlyName="Open Fire"
+LocFlyOverText="Open Fire"
+LocLongDescription="Gain +<Ability:F_OpenFire_AimBonus> aim and +<Ability:F_OpenFire_CritBonus> critical chance against targets at full health."
+LocHelpText="Gain +<Ability:F_OpenFire_AimBonus> aim and +<Ability:F_OpenFire_CritBonus> critical chance against targets at full health."
+LocPromotionPopupText=""
+
+[F_Havoc X2AbilityTemplate]
+LocFriendlyName="Havoc"
+LocFlyOverText="Havoc"
+LocLongDescription="Your Suppression and Area Suppression abilities now deal guaranteed damage to the primary target."
+LocHelpText="Your Suppression and Area Suppression abilities now deal guaranteed damage to the primary target."
+LocPromotionPopupText="<Bullet> Deals <Ability:F_Havoc_Damage> damage to the primary target depending on the weapon tier."
+
+[F_Finesse X2AbilityTemplate]
+LocFriendlyName="Finesse"
+LocFlyOverText="Finesse"
+LocLongDescription="The first melee attack each turn will not cost any actions."
+LocHelpText="The first melee attack each turn will not cost any actions."
+LocPromotionPopupText="<Bullet> Can only activate once per turn."
+
+[F_ShoulderToLeanOn X2AbilityTemplate]
+LocFriendlyName="Shoulder to Lean On"
+LocFlyOverText="Shoulder to Lean On"
+LocLongDescription="Allies within <Ability:F_ShoulderToLeanOn_Radius> tile(s) gain +<Ability:F_ShoulderToLeanOn_AimBonus> aim. This bonus is increased to +<Ability:F_ShoulderToLeanOn_ShieldAimBonus> aim while Shield Wall is active."
+LocHelpText="Allies within <Ability:F_ShoulderToLeanOn_Radius> tile(s) gain +<Ability:F_ShoulderToLeanOn_AimBonus> aim. This bonus is increased to +<Ability:F_ShoulderToLeanOn_ShieldAimBonus> aim while Shield Wall is active."
+LocPromotionPopupText=""
+
+[F_ShoulderToLeanOn_Passive X2AbilityTemplate]
+LocFriendlyName="Shoulder to Lean On"
+LocFlyOverText="Shoulder to Lean On"
+LocLongDescription="Allies within <Ability:F_ShoulderToLeanOn_Radius> tile(s) gain +<Ability:F_ShoulderToLeanOn_AimBonus> aim. This bonus is increased to +<Ability:F_ShoulderToLeanOn_ShieldAimBonus> aim while Shield Wall is active."
+LocHelpText="Allies within <Ability:F_ShoulderToLeanOn_Radius> tile(s) gain +<Ability:F_ShoulderToLeanOn_AimBonus> aim. This bonus is increased to +<Ability:F_ShoulderToLeanOn_ShieldAimBonus> aim while Shield Wall is active."
+LocPromotionPopupText=""
+
+[F_ProtectAndServe X2AbilityTemplate]
+LocFriendlyName="Protect and Serve"
+LocFlyOverText="Protect and Serve"
+LocLongDescription="Gain a non-movement action point after using Shield Wall."
+LocHelpText="Gain a non-movement action point after using Shield Wall."
+LocPromotionPopupText="<Bullet> Can only activate once per turn."
+
+[F_ProtectAndServe_Passive X2AbilityTemplate]
+LocFriendlyName="Protect and Serve"
+LocFlyOverText="Protect and Serve"
+
+[F_BolsteredWall X2AbilityTemplate]
+LocFriendlyName="Bolstered Wall"
+LocFlyOverText="Bolstered Wall"
+LocLongDescription="Gain +<Ability:F_BolsteredWall_DodgeBonus> dodge while Shield Wall is active."
+LocHelpText="Gain +<Ability:F_BolsteredWall_DodgeBonus> dodge while Shield Wall is active."
+LocPromotionPopupText=""
+
+[F_FaultlessDefense X2AbilityTemplate]
+LocFriendlyName="Faultless Defense"
+LocFlyOverText="Faultless Defense"
+LocLongDescription="While Shield Wall is active, you cannot be critically hit."
+LocHelpText="While Shield Wall is active, you cannot be critically hit."
+LocPromotionPopupText=""
+
+[F_Adrenaline X2AbilityTemplate]
+LocFriendlyName="Adrenaline"
+LocFlyOverText="Adrenaline"
+LocLongDescription="Whenever you score a kill, gain <Ability:F_Adrenaline_ShieldAmount> Shield until the end of the mission."
+LocHelpText="Whenever you score a kill, gain <Ability:F_Adrenaline_ShieldAmount> Shield until the end of the mission."
+LocPromotionPopupText="<Bullet> Can activate up to <Ability:F_Adrenaline_ActivationsPerMission> times per mission.<br><Bullet> Does not activate when killing the Lost."
+
+[F_Adrenaline_Passive X2AbilityTemplate]
+LocFriendlyName="Adrenaline"
+LocFlyOverText="Adrenaline"
+LocLongDescription="Whenever you score a kill, gain <Ability:F_Adrenaline_ShieldAmount> Shield until the end of the mission."
+LocHelpText="Whenever you score a kill, gain <Ability:F_Adrenaline_ShieldAmount> Shield until the end of the mission."
+LocPromotionPopupText="<Bullet> Can activate up to <Ability:F_Adrenaline_ActivationsPerMission> times per mission.<br><Bullet> Does not activate when killing the Lost."
+
+[F_WatchThemRun X2AbilityTemplate]
+LocFriendlyName="Watch Them Run"
+LocFlyOverText="Watch Them Run"
+LocLongDescription="Once per turn, immediately enter overwatch after throwing or launching a grenade."
+LocHelpText="Once per turn, immediately enter overwatch after throwing or launching a grenade."
+LocPromotionPopupText="<Bullet> Will not activate if the <Ability:ClassName> is disoriented, stunned, panicking, on fire or otherwise impaired.<br><Bullet> Will not activate if the <Ability:ClassName> doesn't have enough ammo for overwatch."
+
+[F_WatchThemRun_Passive X2AbilityTemplate]
+LocFriendlyName="Watch Them Run"
+LocFlyOverText="Watch Them Run"
+LocLongDescription="Once per turn, immediately enter overwatch after throwing or launching a grenade."
+LocHelpText="Once per turn, immediately enter overwatch after throwing or launching a grenade."
+LocPromotionPopupText="<Bullet> Will not activate if the <Ability:ClassName> is disoriented, stunned, panicking, on fire or otherwise impaired.<br><Bullet> Will not activate if the <Ability:ClassName> doesn't have enough ammo for overwatch."
+
+[F_WatchThemRun2 X2AbilityTemplate]
+LocFriendlyName="Watch Them Run"
+LocFlyOverText="Watch Them Run"
+LocLongDescription="If you throw or launch a grenade during your turn, automatically enter overwatch at the end of it."
+LocHelpText="If you throw or launch a grenade during your turn, automatically enter overwatch at the end of it."
+LocPromotionPopupText="<Bullet> Will not activate if the <Ability:ClassName> is disoriented, stunned, panicking, on fire or otherwise impaired.<br><Bullet> Will not activate if the <Ability:ClassName> doesn't have enough ammo for overwatch."
+
+[F_WatchThemRun2_Activation X2AbilityTemplate]
+LocFriendlyName="Watch Them Run"
+LocFlyOverText="Watch Them Run"
+
+[F_WatchThemRun2_Passive X2AbilityTemplate]
+LocFriendlyName="Watch Them Run"
+LocFlyOverText="Watch Them Run"
+LocLongDescription="If you throw or launch a grenade during your turn, automatically enter overwatch at the end of it."
+LocHelpText="If you throw or launch a grenade during your turn, automatically enter overwatch at the end of it."
+LocPromotionPopupText="<Bullet> Will not activate if the <Ability:ClassName> is disoriented, stunned, panicking, on fire or otherwise impaired.<br><Bullet> Will not activate if the <Ability:ClassName> doesn't have enough ammo for overwatch."
+
+[F_CoverArea X2AbilityTemplate]
+LocFriendlyName="Cover Area"
+LocFlyOverText="Cover Area"
+LocLongDescription="You and all allies within <Ability:F_CoverArea_Radius> tile(s) receive <Ability:F_CoverArea_DamageReduction> less damage from explosives."
+LocHelpText="You and all allies within <Ability:F_CoverArea_Radius> tile(s) receive <Ability:F_CoverArea_DamageReduction> less damage from explosives."
+LocPromotionPopupText=""
+
+[F_CoverArea_Passive X2AbilityTemplate]
+LocFriendlyName="Cover Area"
+LocFlyOverText="Cover Area"
+LocLongDescription="You and all allies within <Ability:F_CoverArea_Radius> tile(s) receive <Ability:F_CoverArea_DamageReduction> less damage from explosives."
+LocHelpText="You and all allies within <Ability:F_CoverArea_Radius> tile(s) receive <Ability:F_CoverArea_DamageReduction> less damage from explosives."
+LocPromotionPopupText=""
+
+[F_Rally X2AbilityTemplate]
+LocFriendlyName="Rally"
+LocFlyOverText="Rally"
+LocLongDescription="Embolden the resolve of all allies within <Ability:F_Rally_Radius> tile(s), granting them and yourself bonus Shield HP for <Ability:F_Rally_Duration> turn(s). Usable once per mission."
+LocHelpText="Grant <Ability:F_Rally_ShieldAmount> Shield HP to yourself and all allies within <Ability:F_Rally_Radius> tile(s) for <Ability:F_Rally_Duration> turn(s)."
+LocPromotionPopupText="<Bullet> Grants <Ability:F_Rally_ShieldAmount> Shield HP depending on the tier of your <Ability:F_BoundWeaponName>."
+
+[F_ShieldTrauma X2AbilityTemplate]
+LocFriendlyName="Shield Trauma"
+LocFlyOverText="Shield Trauma"
+LocLongDescription="Your shield attacks stun the target for <Ability:F_ShieldTrauma_StunDuration> action(s)."
+LocHelpText="Your shield attacks stun the target for <Ability:F_ShieldTrauma_StunDuration> action(s)."
+LocPromotionPopupText=""
+
+[F_Avenger X2AbilityTemplate]
+LocFriendlyName="Avenger"
+LocFlyOverText="Avenger"
+LocLongDescription="Once per turn, when a visible enemy takes a hostile action against an ally, return fire with your <Ability:F_BoundWeaponName>."
+LocHelpText="Once per turn, when a visible enemy takes a hostile action against an ally, return fire with your <Ability:F_BoundWeaponName>."
+LocPromotionPopupText="<Bullet> Will not activate if the enemy attacks the <Ability:ClassName>.<br><Bullet> Does not activate during the <Ability:ClassName>'s own turn.<br><Bullet> Can only activate once per turn."
+
+[F_Avenger_Attack X2AbilityTemplate]
+LocFriendlyName="Avenger"
+LocFlyOverText="Avenger"
+
+[F_FireFirst X2AbilityTemplate]
+LocFriendlyName="Fire First"
+LocFlyOverText="Fire First"
+LocLongDescription="Once per turn, when an enemy attempts to take a hostile action against you, take a preemptive shot against them with your <Ability:F_BoundWeaponName>."
+LocHelpText="Once per turn, when an enemy attempts to take a hostile action against you, take a preemptive shot against them with your <Ability:F_BoundWeaponName>."
+LocPromotionPopupText="<Bullet> Will not activate if the <Ability:ClassName> is not the primary target of the attack.<br><Bullet> Does not activate during the <Ability:ClassName>'s own turn.<br><Bullet> Can only activate once per turn."
+
+[F_FireFirst_Attack X2AbilityTemplate]
+LocFriendlyName="Fire First"
+LocFlyOverText="Fire First"
+
+[F_Flatline X2AbilityTemplate]
+LocFriendlyName="Flatline"
+LocFlyOverText="Flatline"
+LocLongDescription="Take a <Ability:F_BoundWeaponName> that deals +<Ability:F_Flatline_DamageBonus> damage and applies +<Ability:F_Flatline_Rupture> rupture. Uses <Ability:SelfAmmoCost> ammo. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Special <Ability:F_BoundWeaponName> that deals +<Ability:F_Flatline_DamageBonus> damage and applies +<Ability:F_Flatline_Rupture> rupture. Uses <Ability:SelfAmmoCost> ammo."
+LocPromotionPopupText="<Bullet> Rupture from multiple attacks doesn't stack. Higher rupture value overwrites the lower one.<br>
+<Bullet> The rupture of the attack is equal to the sum of the rupture from the weapon, ammo and ability."
+
+[F_ColdBlooded X2AbilityTemplate]
+LocFriendlyName="Cold Blooded"
+LocFlyOverText="Cold Blooded"
+LocLongDescription="Once per turn, when you take a standard <Ability:F_BoundWeaponName> shot against an enemy suffering from bleeding, poison, burning, or acid burning, your actions will be refunded."
+LocHelpText="Once per turn, when you take a standard <Ability:F_BoundWeaponName> shot against an enemy suffering from bleeding, poison, burning, or acid burning, your actions will be refunded."
+LocPromotionPopupText="<Bullet> The actions will not be refunded if the target wasn't afflicted before the attack.<br><Bullet> Can only activate once per turn."
+
+[F_Predator X2AbilityTemplate]
+LocFriendlyName="Predator"
+LocFlyOverText="Predator"
+LocLongDescription="Gain +<Ability:F_Predator_AimBonus> aim and +<Ability:F_Predator_CritBonus> critical chance against enemies that are flanked or out of cover."
+LocHelpText="Gain +<Ability:F_Predator_AimBonus> aim and +<Ability:F_Predator_CritBonus> critical chance against enemies that are flanked or out of cover."
+LocPromotionPopupText="<Bullet> Does not apply against enemies that cannot take cover."
+
+[F_Survivor X2AbilityTemplate]
+LocFriendlyName="Survivor"
+LocFlyOverText="Survivor"
+LocLongDescription="Guarantees success on the first bleedout roll each mission. Reduces the soldier's wound recovery time by <Ability:F_Survivor_WoundReduction>."
+LocHelpText="Ensures the first killing blow in a mission will not lead to instant death. Also reduces this soldier's wound recovery time."
+LocPromotionPopupText="<Bullet> Certain abilities and effects can bypass or disable bleedout.<br><Bullet> Reduces the number of HP a soldier must heal after being wounded in battle by <Ability:F_Survivor_WoundReduction>.<br><Bullet> Wound recovery reduction will not apply if the <Ability:ClassName> entered a bleeding out state during the mission."
+
+[F_RegenerativeMist X2AbilityTemplate]
+LocFriendlyName="Regenerative Mist"
+LocFlyOverText="Regenerative Mist"
+LocLongDescription="Your smoke grenades heal units in the smoke cloud for <Ability:F_RegenerativeMist_HealAmount> HP at the start of each turn, up to a maximum of <Ability:F_RegenerativeMist_MaxHealAmount> HP per mission."
+LocHelpText="Your smoke grenades heal units in the smoke cloud at the start of each turn."
+LocPromotionPopupText="<Bullet> The effect will be applied if the unit enters the smoke after it's deployed.<br><Bullet> Doesn't apply to mechanical units.<br><Bullet> Applies to enemy units."
+
+[F_ControlledFire X2AbilityTemplate]
+LocFriendlyName="Controlled Fire"
+LocFlyOverText="Controlled Fire"
+LocLongDescription="Reaction shots from Area Suppression no longer cost ammo."
+LocHelpText="Reaction shots from Area Suppression no longer cost ammo."
+LocPromotionPopupText="<Bullet> Only applies to the reaction shots; the cost of the Area Suppression is unchanged."
+
+[F_Stiletto X2AbilityTemplate]
+LocFriendlyName="Stiletto"
+LocFlyOverText="Stiletto"
+LocLongDescription="Your <Ability:F_BoundWeaponName> attacks pierce <Ability:F_Stiletto_PierceBonus> additional armor."
+LocHelpText="Your <Ability:F_BoundWeaponName> attacks pierce <Ability:F_Stiletto_PierceBonus> additional armor."
+LocPromotionPopupText=""
+
+[F_StayCovered X2AbilityTemplate]
+LocFriendlyName="Stay Covered"
+LocFlyOverText="Stay Covered"
+LocLongDescription="Shield Wall no longer reduces your defense."
+LocHelpText="Shield Wall no longer reduces your defense."
+LocPromotionPopupText=""
+
+[F_Indomitable X2AbilityTemplate]
+LocFriendlyName="Indomitable"
+LocFlyOverText="Indomitable"
+LocLongDescription="Become immune to all damage until the beginning of your next turn. Usable once per mission."
+LocHelpText="Become immune to all damage until the beginning of your next turn."
+LocPromotionPopupText="<Bullet> Requires a single action and doesn't end the turn.<br><Bullet> Usable once per mission."
+
+[F_PerfectGuard X2AbilityTemplate]
+LocFriendlyName="Perfect Guard"
+LocFlyOverText="Perfect Guard"
+LocLongDescription="Gain +<Ability:F_PerfectGuard_ArmorBonus> armor while Shield Wall is active."
+LocHelpText="Gain +<Ability:F_PerfectGuard_ArmorBonus> armor while Shield Wall is active."
+LocPromotionPopupText=""
+
+[F_ShieldRegeneration X2AbilityTemplate]
+LocFriendlyName="Shield Regeneration"
+LocFlyOverText="Shield Regeneration"
+LocLongDescription="At the start of each turn, if you current Shield HP is below <Ability:F_ShieldRegeneration_MaxShield>, gain +<Ability:F_ShieldRegeneration_ShieldAmount> Shield HP."
+LocHelpText="At the start of each turn, if you current Shield HP is below <Ability:F_ShieldRegeneration_MaxShield>, gain +<Ability:F_ShieldRegeneration_ShieldAmount> Shield HP."
+LocPromotionPopupText=""
+
+[F_ShieldRegeneration_Passive X2AbilityTemplate]
+LocFriendlyName="Shield Regeneration"
+LocFlyOverText="Shield Regeneration"
+LocLongDescription="At the start of each turn, if you current Shield HP is below <Ability:F_ShieldRegeneration_MaxShield>, gain +<Ability:F_ShieldRegeneration_ShieldAmount> Shield HP."
+LocHelpText="At the start of each turn, if you current Shield HP is below <Ability:F_ShieldRegeneration_MaxShield>, gain +<Ability:F_ShieldRegeneration_ShieldAmount> Shield HP."
+LocPromotionPopupText=""
+
+[F_CalmMind X2AbilityTemplate]
+LocFriendlyName="Calm Mind"
+LocFlyOverText="Calm Mind"
+LocLongDescription="Gain +<Ability:F_CalmMind_PsiBonus> psi offense and +<Ability:F_CalmMind_WillBonus> will."
+LocHelpText="Gain +<Ability:F_CalmMind_PsiBonus> psi offense and +<Ability:F_CalmMind_WillBonus> will."
+LocPromotionPopupText=""
+
+[F_SuppressingFire X2AbilityTemplate]
+LocFriendlyName="Suppressing Fire"
+LocFlyOverText="Suppressing Fire"
+LocLongDescription="Fire a standard shot. If the shot does not kill the target, then suppress them."
+LocHelpText="Fire a standard shot. If the shot does not kill the target, then suppress them."
+LocPromotionPopupText="<Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown.<br><Bullet> Requires 3 ammo, but consumes only 1."
+
+[F_PutEmDown X2AbilityTemplate]
+LocFriendlyName="Put 'Em Down"
+LocFlyOverText="Put 'Em Down"
+LocLongDescription="Gain +<Ability:F_PutEmDown_AimBonus> aim against disoriented, stunned or panicking targets."
+LocHelpText="Gain +<Ability:PUTEMDOWN_AIM> aim against disoriented, stunned or panicking targets."
+LocPromotionPopupText=""
+
+[F_WillToSurvive X2AbilityTemplate]
+LocFriendlyName="Will to Survive"
+LocFlyOverText="Will to Survive"
+LocLongDescription="Gain +<Ability:F_WilltoSurvive_ArmorBonus> armor and +<Ability:F_WilltoSurvive_DodgeBonus> dodge."
+LocHelpText="Gain +<Ability:F_WilltoSurvive_ArmorBonus> armor and +<Ability:F_WilltoSurvive_DodgeBonus> dodge."
+LocPromotionPopupText=""
+
+[F_WatchfulEye X2AbilityTemplate]
+LocFriendlyName="Watchful Eye"
+LocFlyOverText="Watchful Eye"
+LocLongDescription="You get a free overwatch shot when any target you have holotargeted moves or attacks."
+LocHelpText="You get a free overwatch shot when any target you have holotargeted moves or attacks."
+LocPromotionPopupText="<Bullet> Only applies to targets the soldier has holotargeted themself.<br><Bullet> Can activate once on each holotargeted foe per turn."
+
+[F_WatchfulEye_Attack X2AbilityTemplate]
+LocFriendlyName="Watchful Eye"
+LocFlyOverText="Watchful Eye"
+
+[F_Guard X2AbilityTemplate]
+LocFriendlyName="Guard"
+LocFlyOverText="Guard"
+LocLongDescription="Block the next attack made at you, negating all damage and effects. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Block the next attack made at you, negating all damage and effects."
+LocPromotionPopupText="<Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_Guard_Passive X2AbilityTemplate]
+LocFriendlyName="Guard"
+LocFlyOverText="Guard"
+LocLongDescription="Block the next attack made at you, negating all damage and effects. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Block the next attack made at you, negating all damage and effects."
+LocPromotionPopupText="<Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_Safeguard X2AbilityTemplate]
+LocFriendlyName="Safeguard"
+LocFlyOverText="Safeguard"
+LocLongDescription="Allies within <Ability:F_Safeguard_Radius> tile(s) gain +<Ability:F_Safeguard_DefenseBonus> defense. This bonus is increased to +<Ability:F_Safeguard_ShieldDefenseBonus> aim while Shield Wall is active."
+LocHelpText="Allies within <Ability:F_Safeguard_Radius> tile(s) gain +<Ability:F_Safeguard_DefenseBonus> defense. This bonus is increased to +<Ability:F_Safeguard_ShieldDefenseBonus> aim while Shield Wall is active."
+LocPromotionPopupText=""
+
+[F_Safeguard_Passive X2AbilityTemplate]
+LocFriendlyName="Safeguard"
+LocFlyOverText="Safeguard"
+LocLongDescription="Allies within <Ability:F_Safeguard_Radius> tile(s) gain +<Ability:F_Safeguard_DefenseBonus> defense. This bonus is increased to +<Ability:F_Safeguard_ShieldDefenseBonus> aim while Shield Wall is active."
+LocHelpText="Allies within <Ability:F_Safeguard_Radius> tile(s) gain +<Ability:F_Safeguard_DefenseBonus> defense. This bonus is increased to +<Ability:F_Safeguard_ShieldDefenseBonus> aim while Shield Wall is active."
+LocPromotionPopupText=""
+
+[F_TradeFire X2AbilityTemplate]
+LocFriendlyName="Trade Fire"
+LocFlyOverText="Trade Fire"
+LocLongDescription="Until the start of next turn, fire at any enemy that takes a hostile action. These shots do not have a reaction penalty. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Until the start of next turn, fire at any enemy that takes a hostile action. These shots do not have a reaction penalty."
+LocPromotionPopupText="<Bullet> Until the start of next turn, fire at any enemy that takes a hostile action.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_TradeFire_Attack X2AbilityTemplate]
+LocFriendlyName="Trade Fire"
+LocFlyOverText="Trade Fire"
+
+[F_Intimidate X2AbilityTemplate]
+LocFriendlyName="Intimidate"
+LocFlyOverText="Intimidate"
+LocLongDescription="When targeted by an attack, the enemy has a chance to panic."
+LocHelpText="When targeted by an attack, the enemy has a chance to panic."
+LocPromotionPopupText="<Bullet> Intimidate's chance to panic the attacker increases with the tier of your <Ability:SecondaryWeaponName>.<br><Bullet> Intimidate will not trigger when targeted by reaction fire."
+
+[F_Intimidate_Trigger X2AbilityTemplate]
+LocFriendlyName="Intimidate"
+LocFlyOverText="Intimidate"
+
+[F_Rampart X2AbilityTemplate]
+LocFriendlyName="Rampart"
+LocFlyOverText="Rampart"
+LocLongDescription="Activate to reduce all damage taken by the <Ability:ClassName> and all allies within <Ability:F_Rampart_Radius> tiles by <Ability:F_Rampart_DamageReduction>. <Ability:F_FreeAction>. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Activate to reduce all damage taken by the <Ability:ClassName> and all allies within <Ability:RAMPARTF_Rampart_Radius_RADIUS> tiles by <Ability:F_Rampart_DamageReduction>."
+LocPromotionPopupText="<Bullet> Allies must within <Ability:F_Rampart_Radius> tiles of the <Ability:ClassName> to gain the bonus<br><Bullet> <Ability:F_FreeAction>.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_Rampart_Trigger X2AbilityTemplate]
+LocFriendlyName="Rampart"
+LocFlyOverText="Rampart"
+
+[F_Rampart_Passive X2AbilityTemplate]
+LocFriendlyName="Rampart"
+LocFlyOverText="Rampart"
+LocLongDescription="Activate to reduce all damage taken by the <Ability:ClassName> and all allies within <Ability:F_Rampart_Radius> tiles by <Ability:F_Rampart_DamageReduction>. <Ability:F_FreeAction>. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Activate to reduce all damage taken by the <Ability:ClassName> and all allies within <Ability:RAMPARTF_Rampart_Radius_RADIUS> tiles by <Ability:F_Rampart_DamageReduction>."
+LocPromotionPopupText="<Bullet> Allies must within <Ability:F_Rampart_Radius> tiles of the <Ability:ClassName> to gain the bonus<br><Bullet> <Ability:F_FreeAction>.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_StrongBack X2AbilityTemplate]
+LocFriendlyName="Strong Back"
+LocFlyOverText="Strong Back"
+LocLongDescription="Reduces the mobility penalty for each weighted utility item by one."
+LocHelpText="Reduces the mobility penalty for each weighted utility item by one."
+LocPromotionPopupText="<Bullet> Applies to items in the Utility, Grenade, and Ammo slots."
+
+[F_CoordinateFire X2AbilityTemplate]
+LocFriendlyName="Coordinate Fire"
+LocFlyOverText="Coordinate Fire"
+LocLongDescription="Fire at a target, then command all allies within <Ability:F_CoordinateFire_Radius> tiles to fire at that target. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Fire at a target, then command all allies within <Ability:F_CoordinateFire_Radius> tiles to fire at that target."
+LocPromotionPopupText="<Bullet> Allies will follow-up with a standard weapon attack with their primary weapon. If their primary weapon is not a gun, or they are out of ammo, then the follow-up attack will not occur."
+
+[F_CoordinateFire_Attack X2AbilityTemplate]
+LocFriendlyName="Coordinate Fire"
+LocFlyOverText="Coordinate Fire"
+
+[F_PackTactics X2AbilityTemplate]
+LocFriendlyName="Pack Tactics"
+LocFlyOverText="Pack Tactics"
+LocLongDescription="If Shield Wall is active, all your allies within <Ability:F_PackTactics_Radius> tiles will enter overwatch at the end of the turn."
+LocHelpText="If Shield Wall is active, all your allies within <Ability:F_PackTactics_Radius> tiles will enter overwatch at the end of the turn."
+LocPromotionPopupText=""
+
+[F_PackTactics_Passive X2AbilityTemplate]
+LocFriendlyName="Pack Tactics"
+LocFlyOverText="Pack Tactics"
+LocLongDescription="If Shield Wall is active, all your allies within <Ability:F_PackTactics_Radius> tiles will enter overwatch at the end of the turn."
+LocHelpText="If Shield Wall is active, all your allies within <Ability:F_PackTactics_Radius> tiles will enter overwatch at the end of the turn."
+LocPromotionPopupText=""
+
+[F_Parry X2AbilityTemplate]
+LocFriendlyName="Parry"
+LocFlyOverText="Parry"
+LocLongDescription="You may parry melee attacks and counterattack with a Shield Bash."
+LocHelpText="You may parry melee attacks and counterattack with a Shield Bash."
+LocPromotionPopupText="<Bullet> Gain +<Ability:F_Parry_DodgeBonus> against the first melee attack each turn."
+
+[F_Parry_Attack X2AbilityTemplate]
+LocFriendlyName="Parry"
+LocFlyOverText="Parry"
+
+[F_Parry_Preparation X2AbilityTemplate]
+LocFriendlyName="Parry"
+LocFlyOverText="Parry"
+
+[F_Parry_Counterattack X2AbilityTemplate]
+LocFriendlyName="Parry"
+LocFlyOverText="Parry"
+
+[F_MindBlast X2AbilityTemplate]
+LocFriendlyName="Mind Blast"
+LocFlyOverText="Mind Blast"
+LocLongDescription="Deal a small amount of damage and stun the target for <Ability:F_MindBlast_StunDuration> action(s). Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Deal a small amount of damage and stun the target for <Ability:F_MindBlast_StunDuration> action(s)."
+LocPromotionPopupText="<Bullet> Damage increases with the technology of the equipped Psi Amp.<br><Bullet> Stuns the target for <Ability:MINDBLAST_STUN_ACTIONS> action.<br><Bullet> <Ability:MINDBLAST_COOLDOWN> turn cooldown.<br><Bullet> Guarenteed to hit, pierces Armor, and ignores Shields.<br><Bullet> Can only be used against organic targets.<br>"
+
+[F_SensePanic X2AbilityTemplate]
+LocFriendlyName="Mind's Eye"
+LocFlyOverText="Mind's Eye"
+LocLongDescription="Shots against targets that are suffering from mental impairments ignore half of the cover bonus."
+LocHelpText="Shots against targets that are suffering from mental impairments ignore half of the cover bonus."
+LocPromotionPopupText="<Bullet> Mental impairments include Disoriented, Stunned, Dazed, and Panicked.<br><Bullet> Applies to standard as well as reaction fire."
+
+[F_OverExertion X2AbilityTemplate]
+LocFriendlyName="Over Exertion"
+LocFlyOverText="Over Exertion"
+LocLongDescription="Immediately gain a bonus standard action point. <Ability:F_FreeAction>. Has a <Ability:F_SelfCooldown>-turn cooldown and <Ability:F_SelfCharges> charge(s) per mission."
+LocHelpText="Immediately gain a bonus standard action point."
+LocPromotionPopupText="<Bullet> <Ability:F_FreeAction>.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown.<br><Bullet> Has <Ability:F_SelfCharges> charge(s) per mission."
+
+[F_RiotControl X2AbilityTemplate]
+LocFriendlyName="Riot Control"
+LocFlyOverText="Riot Control"
+LocLongDescription="Grants a free flashbang and smoke grenade."
+LocHelpText="Grants a free flashbang and smoke grenade."
+LocPromotionPopupText=""
+
+[F_KillEmAll X2AbilityTemplate]
+LocFriendlyName="Kill 'Em All"
+LocFlyOverText="Kill 'Em All"
+LocLongDescription="Take a shot at every visible enemy in a cone area. Uses <Ability:SelfAmmoCost> ammo. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Take a shot at every enemy in a cone area. Requires line of sight in order to fire at a target. Uses <Ability:SelfAmmoCost> ammo."
+LocPromotionPopupText="<Bullet> Consumes <Ability:SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+
+[F_SurgicalPrecision X2AbilityTemplate]
+LocFriendlyName="Surgical Precision"
+LocFlyOverText="Surgical Precision"
+LocLongDescription="Your attacks ignore half of the cover bonus. Does not apply to reaction fire."
+LocHelpText="Your attacks ignore half of the cover bonus. Does not apply to reaction fire."
+LocPromotionPopupText="<Bullet> Does not apply to reaction fire.<br><Bullet> Does not apply to attacks that ignore cover."
+
+[F_SniperElite X2AbilityTemplate]
+LocFriendlyName="Sniper Elite"
+LocFlyOverText="Sniper Elite"
+LocLongDescription="Removes squadsight penalties."
+LocHelpText="Removes squadsight penalties."
+LocPromotionPopupText=""

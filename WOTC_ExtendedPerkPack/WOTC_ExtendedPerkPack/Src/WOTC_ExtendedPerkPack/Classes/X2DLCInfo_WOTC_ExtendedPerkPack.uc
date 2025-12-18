@@ -1,1 +1,0 @@
-class X2DLCInfo_WOTC_ExtendedPerkPack extends X2DownloadableContentInfo;

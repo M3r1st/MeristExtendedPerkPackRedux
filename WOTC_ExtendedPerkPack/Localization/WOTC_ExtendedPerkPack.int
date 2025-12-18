@@ -1,0 +1,36 @@
+[X2Ability_ExtendedPerkPack]
+
+LikeLightning_RefundAvailableText   = "The soldier's next Arc Thrower shot this turn will not cost an action."
+Imposition_DebuffText               = "The unit's aim is reduced."
+Botnet_BuffText                     = "The unit's standard shots reduce the hack defense of the robotic targets."
+Immunize_BuffText                   = "The unit is immune to damage."
+BleedingFriendlyDesc                = "The unit takes <Ability:F_BleedingDamage> bleeding damage at the start of each turn."
+BlindingFire_DebuffText             = "The unit's aim is reduced."
+ShoulderToLeanOn_BuffText           = "The unit's aim is increased."
+CoverArea_BuffText                  = "The unit takes less damage from explosives."
+Safeguard_BuffText                  = "The unit's defense is increased."
+Rampart_BuffText                    = "The unit takes less damage."
+
+[X2DLCInfo_WOTC_ExtendedPerkPack]
+
+strFreeAction               = "Free action"
+strDefaultWeapon            = "weapon"
+
++LocalizedAbilities         = "StandardShot"
++LocalizedAbilityNames      = "Standard Shot"
++LocalizedAbilities         = "SniperStandardFire"
++LocalizedAbilityNames      = "Standard Sniper Shot"
++LocalizedAbilities         = "PistolStandardShot"
++LocalizedAbilityNames      = "Pistol Shot"
+
++LocalizedAbilitiesToHide   = "StandardShot_NoEnd"
+
+[X2Effect_EPPCombatDrugs]
+
+strEffectBonusName  = "Combat Stimulants"
+strEffectBonusDesc  = "This smoke effect was created by a unit with Combat Stimulants, and grants +<Ability:F_CombatDrugs_AimBonus> aim and +<Ability:F_CombatDrugs_CritBonus> critical chance."
+
+[X2Effect_EPPRegenMist]
+
+strEffectBonusName  = "Regenerative Mist"
+strEffectBonusDesc  = "This smoke effect was created by a unit with Regenerative Mist, and grants health restoration."
