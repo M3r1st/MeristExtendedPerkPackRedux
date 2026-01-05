@@ -10,7 +10,7 @@ $common = Join-Path -Path $ScriptDirectory "X2ModBuildCommon\build_common.ps1"
 Write-Host "Sourcing $common"
 . ($common)
 
-$builder = [BuildProject]::new("WOTC_ExtendedPerkPack", $srcDirectory, $sdkPath, $gamePath)
+$builder = [BuildProject]::new("MeristExtendedPerkPackRedux", $srcDirectory, $sdkPath, $gamePath)
 
 # Building against Highlander option 1:
 # Use Git to add Highlander submodule by running this command in the terminal:
@@ -45,7 +45,7 @@ $builder.InvokeBuild()
 if ($null -ne (Get-Command "X2ProjectGenerator.exe" -ErrorAction SilentlyContinue))
 {
     Write-Host "Verifying project file..."
-    &"X2ProjectGenerator.exe" "$srcDirectory\WOTC_ExtendedPerkPack" "--exclude-contents" "--verify-only"
+    &"X2ProjectGenerator.exe" "$srcDirectory\MeristExtendedPerkPackRedux" "--exclude-contents" "--verify-only"
     if ($LASTEXITCODE -ne 0)
     {
         ThrowFailure "Errors in project file."
