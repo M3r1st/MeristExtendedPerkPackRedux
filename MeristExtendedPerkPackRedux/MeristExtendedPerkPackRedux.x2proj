@@ -121,5 +121,6 @@
     <Content Include="Content\M31_EPP_Psi_ANIMS.upk" />
     <Content Include="Content\PerkContent_F_HoloTargeting.upk" />
     <Content Include="Src\MeristExtendedPerkPackRedux\Classes\X2Condition_AnimSet.uc" />
+    <Content Include="Content\PerkContent_F_Immunize.upk" />
   </ItemGroup>
 </Project>

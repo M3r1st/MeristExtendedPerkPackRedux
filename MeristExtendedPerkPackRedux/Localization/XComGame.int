@@ -324,7 +324,7 @@ LocFriendlyName="Blinding Fire"
 LocFlyOverText="Blinding Fire"
 LocLongDescription="Fire at enemies in a cone with an aim penalty of -<Ability:F_BlindingFire_ToHitPenalty>. Reduces the aim of all targets by <Ability:F_BlindingFire_AimPenalty> for <Ability:F_BlindingFire_Duration> turn(s). Has a <Ability:F_SelfCooldown>-turn cooldown."
 LocHelpText="Fire at enemies in a cone with an aim penalty of -<Ability:F_BlindingFire_ToHitPenalty>. Reduces the aim of all targets by <Ability:F_BlindingFire_AimPenalty> for <Ability:F_BlindingFire_Duration> turn(s)."
-LocPromotionPopupText="<Bullet> Cannot crit.<br><Bullet> The aim penalty is applied even if the attack misses.<br><Bullet> The aim penalty does not stack.<br><Bullet> Consumes <Ability:F_SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocPromotionPopupText="<Bullet> The aim penalty is applied even if the attack misses.<br><Bullet> The aim penalty does not stack.<br><Bullet> Consumes <Ability:F_SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
 
 [F_QuickFeet X2AbilityTemplate]
 LocFriendlyName="Quick Feet"

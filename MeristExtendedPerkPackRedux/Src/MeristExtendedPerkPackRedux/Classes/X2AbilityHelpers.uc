@@ -17,6 +17,16 @@ enum EActionPointCost
                                 // the enemy turn. You should use eCost_Free for activated abilities.
 };
 
+enum EHUDPriorityType
+{
+    ePriorityType_None,
+    ePriorityType_Primary,
+    ePriorityType_Pistol,
+    ePriorityType_Secondary,
+    ePriorityType_Melee,
+    ePriorityType_Psi
+};
+
 static function X2AbilityTemplate Passive(
     name TemplateName,
     string IconImage,
@@ -478,4 +488,87 @@ static function EventListenerReturn AbilityTriggerEventListener_BuffMe(Object Ev
     }
 
     return ELR_NoInterrupt;
+}
+
+static function SetAbilityShotHUDPriority(out X2AbilityTemplate Template,
+    optional EHUDPriorityType Type,
+    optional EActionPointCost Cost,
+    optional EAbilityHostility Hostility)
+{
+    local int CostPriority;
+    local int Priority;
+
+    switch (Cost)
+    {
+        case eCost_Free:
+            CostPriority = 0;
+            break;
+        case eCost_Single:
+            CostPriority = 1;
+            break;
+        case eCost_SingleConsumeAll:
+            CostPriority = 2;
+            break;
+        case eCost_WeaponConsumeAll:
+            CostPriority = 3;
+            break;
+        default:
+            CostPriority = 4;
+    }
+
+    switch (Type)
+    {
+        case ePriorityType_Primary:
+            switch (Hostility)
+            {
+                case eHostility_Offensive:
+                    Priority = 0 + CostPriority;
+                    break;
+                default:
+                    Priority = 20 + CostPriority;
+            }
+            break;
+        case ePriorityType_Pistol:
+            switch (Hostility)
+            {
+                case eHostility_Offensive:
+                    Priority = 10 + CostPriority;
+                    break;
+                default:
+                    Priority = 25 + CostPriority;
+            }
+            break;
+        case ePriorityType_Secondary:
+        case ePriorityType_Melee:
+            switch (Hostility)
+            {
+                case eHostility_Offensive:
+                    Priority = 30 + CostPriority;
+                    break;
+                default:
+                    Priority = 40 + CostPriority;
+            }
+            break;
+        case ePriorityType_Psi:
+            switch (Hostility)
+            {
+                case eHostility_Offensive:
+                    Priority = 50 + CostPriority;
+                    break;
+                default:
+                    Priority = 60 + CostPriority;
+            }
+            break;
+        default:
+            switch (Hostility)
+            {
+                case eHostility_Offensive:
+                    Priority = 70 + CostPriority;
+                    break;
+                default:
+                    Priority = 80 + CostPriority;
+            }
+    }
+
+    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY + Priority;
 }

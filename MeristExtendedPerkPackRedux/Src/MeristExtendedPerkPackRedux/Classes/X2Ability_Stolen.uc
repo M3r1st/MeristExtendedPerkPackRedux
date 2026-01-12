@@ -30,7 +30,7 @@ static function X2AbilityTemplate KillEmAll()
     Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_AlwaysShow;
     Template.Hostility = eHostility_Offensive;
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     Template.bCrossClassEligible = `GetConfigBool("F_KillEmAll_bAWC");
 

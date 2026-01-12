@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------
 //  FILE:    X2Effect_EPPApplyAdditionalSmokeEffectToWorld.uc
 //  AUTHOR:  Merist
-//  PURPOSE: A mirror of the smoke world effect. Has no visualization or particales.
+//  PURPOSE: A mirror of the smoke world effect. Has no visualization or particles.
 //           Used to add and validate additional effects on movement.
 //---------------------------------------------------------------------------------------
 class X2Effect_EPPApplyAdditionalSmokeEffectToWorld extends X2Effect_World abstract;

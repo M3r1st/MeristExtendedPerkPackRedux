@@ -194,7 +194,7 @@ static function X2AbilityTemplate ShootAnyone()
 
     Template = Attack('F_ShootAnyone', "img:///UILibrary_LW_PerkPack.LW_Ability_WalkingFire", false, true, true, true);
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.STANDARD_SHOT_PRIORITY - 1;
 
     AddActionPointCost(Template, eCost_Free);
     AddAmmoCost(Template, 1);
@@ -218,8 +218,8 @@ static function X2AbilityTemplate ChipAway()
     local X2AbilityTemplate Template;
 
     Template = Attack('F_ChipAway', "img:///UILibrary_FavidsPerkPack.UIPerk_ChipAway", `GetConfigBool("F_ChipAway_bAWC"), true);
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     AddCooldown(Template, `GetConfigInt("F_ChipAway_Cooldown"));
     AddActionPointCost(Template, eCost_WeaponConsumeAll);
@@ -414,8 +414,8 @@ static function X2AbilityTemplate Maim()
     local X2Effect_Immobilize       Effect;
 
     Template = Attack('F_Maim', "img:///UILibrary_FavidsPerkPack.UIPerk_Maim", `GetConfigBool("F_Maim_bAWC"), true);
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     AddCooldown(Template, `GetConfigInt("F_Maim_Cooldown"));
     AddActionPointCost(Template, eCost_WeaponConsumeAll);
@@ -758,7 +758,7 @@ static function X2AbilityTemplate PierceTheVeil()
     
     Template = SelfTargetActivated('F_PierceTheVeil', "img:///UILibrary_FavidsPerkPack.UIPerk_AmplifiedShot", `GetConfigBool("F_PierceTheVeil_bAWC"));
     
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_Free, eHostility_Neutral);
 
     AddCooldown(Template, `GetConfigInt("F_PierceTheVeil_Cooldown"));
     AddActionPointCost(Template, eCost_Free);
@@ -829,7 +829,9 @@ static function X2AbilityTemplate CallForFire()
 
     Template = SelfTargetActivated('F_CallForFire', "img:///UILibrary_XPerkIconPack.UIPerk_overwatch_circle", `GetConfigBool("F_CallForFire_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_COLONEL_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_None, eCost_SingleConsumeAll, eHostility_Defensive);
+
+    Template.Hostility = eHostility_Defensive;
 
     RadiusMultiTarget = new class'X2AbilityMultiTarget_Radius';
     RadiusMultiTarget.fTargetRadius = `TILESTOMETERS(`GetConfigFloat("F_CallForFire_Radius"));
@@ -1207,8 +1209,8 @@ static function X2AbilityTemplate DisablingShot()
     local X2AbilityToHitCalc_StandardAim    ToHitCalc;
 
     Template = Attack('F_DisablingShot', "img:///UILibrary_XPerkIconPack.UIPerk_shot_repair", `GetConfigBool("F_DisablingShot_bAWC"), false);
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     ToHitCalc = new class'X2AbilityToHitCalc_StandardAim';
     ToHitCalc.bAllowCrit = false;
@@ -1241,7 +1243,7 @@ static function X2AbilityTemplate Blend()
 
     Template = SelfTargetActivated('F_Blend', "img:///UILibrary_XPerkIconPack.UIPerk_stealth_blaze", `GetConfigBool("F_Blend_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_None, eCost_Free, eHostility_Neutral);
 
     AddCooldown(Template, `GetConfigInt("F_Blend_Cooldown"));
     AddCharges(Template, `GetConfigInt("F_Blend_Charges"));
@@ -1287,7 +1289,7 @@ static function X2AbilityTemplate Botnet()
 
     Template = SelfTargetActivated('F_Botnet', "img:///UILibrary_XPerkIconPack.UIPerk_gremlin_circle", `GetConfigBool("F_Botnet_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Secondary, eCost_Free, eHostility_Neutral);
 
     AddCooldown(Template, `GetConfigInt("F_Botnet_Cooldown"));
     AddActionPointCost(Template, eCost_Free);
@@ -1495,7 +1497,7 @@ static function X2AbilityTemplate Resupply()
 
     Template = SelfTargetActivated('F_Resupply', "img:///UILibrary_FavidsPerkPack.UIPerk_Resupply", `GetConfigBool("F_Resupply_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Secondary, eCost_Single, eHostility_Neutral);
 
     // Targets all allies
     MultiTargetingStyle = new class'X2AbilityMultiTarget_AllAllies';
@@ -1554,7 +1556,9 @@ static function X2AbilityTemplate Immunize()
 
     Template = SelfTargetActivated('F_Immunize', "img:///UILibrary_XPerkIconPack.UIPerk_shield_gremlin", `GetConfigBool("F_Immunize_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Secondary, eCost_Single, eHostility_Defensive);
+
+    Template.Hostility = eHostility_Defensive;
 
     Template.AbilityTargetStyle = default.SingleTargetWithSelf;
 
@@ -1609,7 +1613,7 @@ static function X2AbilityTemplate Rush()
     Template.IconImage = "img:///UILibrary_XPerkIconPack.UIPerk_knife_move2";
     Template.bCrossClassEligible = `GetConfigBool("F_Rush_bAWC");
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Melee, eCost_Single, eHostility_Offensive);
 
     Template.AbilityTriggers.Length = 0;
     Template.AbilityTriggers.AddItem(default.PlayerInputTrigger);
@@ -1647,7 +1651,7 @@ static function X2AbilityTemplate AmmoConservation()
 
     Template = SelfTargetActivated('F_AmmoConservation', "img:///UILibrary_FavidsPerkPack.UIPerk_LockNLoad", `GetConfigBool("F_AmmoConservation_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_Free, eHostility_Neutral);
 
     AddCooldown(Template, `GetConfigInt("F_AmmoConservation_Cooldown"));
     AddActionPointCost(Template, eCost_Free);
@@ -1693,7 +1697,7 @@ static function X2AbilityTemplate Dedication()
 
     Template = SelfTargetActivated('F_Dedication', "img:///UILibrary_FavidsPerkPack.Perk_Ph_Dedication", `GetConfigBool("F_Dedication_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_None, eCost_Free, eHostility_Neutral);
 
     AddCooldown(Template, `GetConfigInt("F_Dedication_Cooldown"));
     AddActionPointCost(Template, eCost_Free);
@@ -1731,7 +1735,9 @@ static function X2AbilityTemplate Triage()
 
     Template = SelfTargetActivated('F_Triage', "img:///UILibrary_XPerkIconPack.UIPerk_medkit_circle", `GetConfigBool("F_Triage_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.MEDIKIT_HEAL_PRIORITY + 2;
+
+    Template.Hostility = eHostility_Defensive;
 
     RadiusMultiTarget = new class'X2AbilityMultiTarget_Radius';
     RadiusMultiTarget.fTargetRadius = `TILESTOMETERS(`GetConfigFloat("F_Triage_Radius"));
@@ -1905,6 +1911,8 @@ static function X2AbilityTemplate Stimulate()
 
     Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.MEDIKIT_HEAL_PRIORITY + 1;
 
+    Template.Hostility = eHostility_Defensive;
+
     Template.AbilityTargetStyle = default.SimpleSingleTarget;
 
     // Target must be within range and friendly
@@ -2003,13 +2011,12 @@ static function X2AbilityTemplate BlindingFire()
 
     Template = Attack('F_BlindingFire', "img:///UILibrary_XPerkIconPack.UIPerk_shot_rifle", `GetConfigBool("F_BlindingFire_bAWC"), false);
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     ToHitCalc = new class'X2AbilityToHitCalc_StandardAim';
     ToHitCalc.BuiltInHitMod = -1 * `GetConfigInt("F_BlindingFire_ToHitPenalty");
     ToHitCalc.bAllowCrit = `GetConfigBool("F_BlindingFire_bAllowCrit");
     Template.AbilityToHitCalc = ToHitCalc;
-    Template.AbilityToHitOwnerOnMissCalc = ToHitCalc;
     Template.bOverrideAim = false;
 
     Template.AbilityTargetStyle = new class'X2AbilityTarget_Cursor';
@@ -2184,8 +2191,8 @@ static function X2AbilityTemplate Unload()
     local X2Effect_SetUnitValue             SetValueEffect;
 
     Template = Attack('F_Unload', "img:///UILibrary_FavidsPerkPack.UIPerk_Unload", `GetConfigBool("F_Unload_bAWC"), true);
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     ToHitCalc = new class'X2AbilityToHitCalc_StandardAim';
     ToHitCalc.BuiltInHitMod = `GetConfigInt("F_Unload_ToHitMod");
@@ -2459,13 +2466,19 @@ static function X2AbilityTemplate RenewalPassive()
 // Fire your primary weapon just over the target's head, causing them to panic. This attack deals no damage.
 static function X2AbilityTemplate WarningShot()
 {
-    local X2AbilityTemplate Template;
+    local X2AbilityTemplate             Template;
+    local X2Condition_UnitImmunities    UnitImmunityCondition;
 
     Template = Attack('F_WarningShot', "img:///UILibrary_FavidsPerkPack.Perk_Ph_WarningShot", `GetConfigBool("F_WarningShot_bAWC"), false);
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     Template.AbilityToHitCalc = default.DeadEye;
+
+    UnitImmunityCondition = new class'X2Condition_UnitImmunities';
+    UnitImmunityCondition.ExcludeDamageTypes = class'X2Effect_Panicked'.default.DamageTypes;
+    UnitImmunityCondition.bOnlyOnCharacterTemplate = false;
+    Template.AbilityTargetConditions.AddItem(UnitImmunityCondition);
 
     AddCooldown(Template, `GetConfigInt("F_WarningShot_Cooldown"));
     AddCharges(Template, `GetConfigInt("F_WarningShot_Charges"));
@@ -3041,11 +3054,10 @@ static function X2AbilityTemplate Rally()
     local X2AbilityPassiveAOE_AbilityRadius PassiveRadius;
     local X2Condition_UnitProperty      UnitPropertyCondition;
     local X2Effect_GrantShields         ShieldEffect;
-    local X2Effect_RemoveEffects        RemoveEffect;
 
     Template = SelfTargetActivated('F_Rally', "img:///UILibrary_PerkIcons.UIPerk_adventshieldbearer_energyshield", `GetConfigBool("F_Rally_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Secondary, eCost_SingleConsumeAll, eHostility_Defensive);
 
     Template.Hostility = eHostility_Defensive;
 
@@ -3074,12 +3086,6 @@ static function X2AbilityTemplate Rally()
     UnitPropertyCondition.TreatMindControlledSquadmateAsHostile = true;
     Template.AbilityMultiTargetConditions.AddItem(UnitPropertyCondition);
 
-    RemoveEffect = new class'X2Effect_RemoveEffects';
-    RemoveEffect.EffectNamesToRemove.AddItem('F_Rally');
-    RemoveEffect.bDoNotVisualize = true;
-    Template.AddTargetEffect(RemoveEffect);
-    Template.AddMultiTargetEffect(RemoveEffect);
-
     ShieldEffect = new class'X2Effect_GrantShields';
     ShieldEffect.EffectName = 'F_Rally';
     ShieldEffect.ShieldAmount = `GetConfigArrayInt("F_Rally_ShieldAmount");
@@ -3094,6 +3100,9 @@ static function X2AbilityTemplate Rally()
     Template.AddMultiTargetEffect(ShieldEffect);
     
     Template.bSkipFireAction = false;
+    Template.bShowActivation = false;
+
+    Template.CustomFireAnim = 'HL_SignalPoint';
     
     Template.BuildInterruptGameStateFn = TypicalAbility_BuildInterruptGameState;
     Template.BuildVisualizationFn = Rally_BuildVisualization;
@@ -3107,27 +3116,60 @@ static function X2AbilityTemplate Rally()
 
 static simulated function Rally_BuildVisualization(XComGameState VisualizeGameState)
 {
-    local XComGameStateHistory History;
+    local XComGameStateHistory          History;
     local XComGameStateContext_Ability  Context;
-    local StateObjectReference InteractingUnitRef;
-    local VisualizationActionMetadata EmptyTrack;
-    local VisualizationActionMetadata ActionMetadata;
-    local X2Action_PlayAnimation PlayAnimationAction;
+
+    local StateObjectReference          SourceUnitRef;
+    local StateObjectReference          TargetUnitRef;
+    local X2AbilityTemplate             AbilityTemplate;
+
+    local VisualizationActionMetadata   EmptyTrack;
+    local VisualizationActionMetadata   SourceTrack;
+    local VisualizationActionMetadata   TargetTrack;
+    local X2Action_PlaySoundAndFlyOver  SoundAndFlyOver;
+    local X2Action_PlaySoundAndFlyOver  SoundAndFlyoverTarget;
+    local X2Action_PlayAnimation        PlayAnimationAction;
+
+    local bool                          bGoodAbility;
+    local EWidgetColor                  FlyoverColor;
+    local int                           Index;
 
     History = `XCOMHISTORY;
-
     Context = XComGameStateContext_Ability(VisualizeGameState.GetContext());
-    InteractingUnitRef = Context.InputContext.SourceObject;
 
-    // Configure the visualization track for the shooter
-    // ****************************************************************************************
-    ActionMetadata = EmptyTrack;
-    ActionMetadata.StateObject_OldState = History.GetGameStateForObjectID(InteractingUnitRef.ObjectID, eReturnType_Reference, VisualizeGameState.HistoryIndex - 1);
-    ActionMetadata.StateObject_NewState = VisualizeGameState.GetGameStateForObjectID(InteractingUnitRef.ObjectID);
-    ActionMetadata.VisualizeActor = History.GetVisualizer(InteractingUnitRef.ObjectID);
+    AbilityTemplate = class'XComGameState_Ability'.static.GetMyTemplateManager().FindAbilityTemplate(Context.InputContext.AbilityTemplateName);
 
-    PlayAnimationAction = X2Action_PlayAnimation(class'X2Action_PlayAnimation'.static.AddToVisualizationTree(ActionMetadata, Context, false, ActionMetadata.LastActionAdded));
-    PlayAnimationAction.Params.AnimName = 'HL_SignalPoint';
+    SourceUnitRef = Context.InputContext.SourceObject;
+
+    SourceTrack = EmptyTrack;
+    SourceTrack.StateObject_OldState = History.GetGameStateForObjectID(SourceUnitRef.ObjectID, eReturnType_Reference, VisualizeGameState.HistoryIndex - 1);
+    SourceTrack.StateObject_NewState = VisualizeGameState.GetGameStateForObjectID(SourceUnitRef.ObjectID);
+    SourceTrack.VisualizeActor = History.GetVisualizer(SourceUnitRef.ObjectID);
+
+    bGoodAbility = XComGameState_Unit(SourceTrack.StateObject_NewState).IsFriendlyToLocalPlayer();
+    FlyoverColor = bGoodAbility ? eColor_Bad : eColor_Bad;
+
+    SoundAndFlyOver = X2Action_PlaySoundAndFlyOver(class'X2Action_PlaySoundAndFlyOver'.static.AddToVisualizationTree(SourceTrack, Context, false, SourceTrack.LastActionAdded));
+    SoundAndFlyOver.SetSoundAndFlyOverParameters(none, AbilityTemplate.LocFlyOverText, 'None', FlyoverColor, AbilityTemplate.IconImage);
+
+    PlayAnimationAction = X2Action_PlayAnimation(class'X2Action_PlayAnimation'.static.AddToVisualizationTree(SourceTrack, Context, false, SourceTrack.LastActionAdded));
+    PlayAnimationAction.Params.AnimName = AbilityTemplate.CustomFireAnim;
+    PlayAnimationAction.bFinishAnimationWait = true;
+
+    for (Index = 0; Index < Context.InputContext.MultiTargets.Length; Index++)
+    {
+        TargetUnitRef = Context.InputContext.MultiTargets[Index];
+        if (TargetUnitRef.ObjectID != 0)
+        {
+            TargetTrack = EmptyTrack;
+            TargetTrack.StateObject_OldState = History.GetGameStateForObjectID(TargetUnitRef.ObjectID, eReturnType_Reference, VisualizeGameState.HistoryIndex - 1);
+            TargetTrack.StateObject_NewState = VisualizeGameState.GetGameStateForObjectID(TargetUnitRef.ObjectID);
+            TargetTrack.VisualizeActor = History.GetVisualizer(TargetUnitRef.ObjectID);
+
+            SoundAndFlyoverTarget = X2Action_PlaySoundAndFlyOver(class'X2Action_PlaySoundAndFlyOver'.static.AddToVisualizationTree(TargetTrack, Context, false, TargetTrack.LastActionAdded));
+            SoundAndFlyoverTarget.SetSoundAndFlyOverParameters(none, AbilityTemplate.LocFlyOverText, 'None', FlyoverColor, AbilityTemplate.IconImage);
+        }
+    }
 }
 
 // Shield Trauma
@@ -3330,8 +3372,8 @@ static function X2AbilityTemplate Flatline()
     local X2Effect_Shredder DamageEffect;
 
     Template = Attack('F_Flatline', "img:///UILibrary_FavidsPerkPack.Perk_Ph_Flatline", `GetConfigBool("F_Flatline_bAWC"), false);
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     AddCooldown(Template, `GetConfigInt("F_Flatline_Cooldown"));
     AddActionPointCost(Template, eCost_WeaponConsumeAll);
@@ -3494,8 +3536,10 @@ static function X2AbilityTemplate Indomitable()
     local X2Effect_DamageImmune Effect;
     
     Template = SelfTargetActivated('F_Indomitable', "img:///UILibrary_XPerkIconPack.UIPerk_star_defense2", `GetConfigBool("F_Indomitable_bAWC"));
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_None, eCost_Single, eHostility_Defensive);
+
+    Template.Hostility = eHostility_Defensive;
 
     AddCooldown(Template, `GetConfigInt("F_Indomitable_Cooldown"));
     AddCharges(Template, `GetConfigInt("F_Indomitable_Charges"));
@@ -3621,7 +3665,7 @@ static function X2AbilityTemplate SuppressingFire()
 
     Template = Attack('F_SuppressingFire', "img:///UILibrary_XPerkIconPack.UIPerk_suppression_shot_2", `GetConfigBool('F_SuppressingFire_bAWC'), true);
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_LIEUTENANT_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     AddCooldown(Template, `GetConfigInt("F_SuppressingFire_Cooldown"));
     AddActionPointCost(Template, eCost_WeaponConsumeAll);
@@ -3831,8 +3875,10 @@ static function X2AbilityTemplate Guard()
     local X2Effect_IncrementUnitValue   ParryUnitValue;
     
     Template = SelfTargetActivated('F_Guard', "img:///UILibrary_XPACK_Common.PerkIcons.UIPerk_parry", `GetConfigBool("F_Guard_bAWC"));
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_None, eCost_Single, eHostility_Defensive);
+
+    Template.Hostility = eHostility_Defensive;
 
     AddCooldown(Template, `GetConfigInt("F_Guard_Cooldown"));
     AddActionPointCost(Template, eCost_Single);
@@ -3935,11 +3981,13 @@ static function X2AbilityTemplate TradeFire()
     local X2Effect_SetUnitValue         UnitValueEffect;
     
     Template = SelfTargetActivated('F_TradeFire', "img:///UILibrary_XPerkIconPack.UIPerk_rifle_circle", `GetConfigBool("F_TradeFire_bAWC"));
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Defensive);
+
+    Template.Hostility = eHostility_Defensive;
 
     AddCooldown(Template, `GetConfigInt("F_TradeFire_Cooldown"));
-    AddActionPointCost(Template, eCost_SingleConsumeAll);
+    AddActionPointCost(Template, eCost_WeaponConsumeAll);
     AddAmmoCost(Template, 1, true);
 
     Template.AddShooterEffectExclusions();
@@ -4193,7 +4241,9 @@ static function X2AbilityTemplate Rampart()
 
     Template = SelfTargetActivated('F_Rampart', "img:///UILibrary_XPerkIconPack.UIPerk_shield_defense2", `GetConfigBool("F_Rampart_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_None, eCost_Free, eHostility_Defensive);
+
+    Template.Hostility = eHostility_Defensive;
 
     RadiusMultiTarget = new class'X2AbilityMultiTarget_Radius';
     RadiusMultiTarget.fTargetRadius = `TILESTOMETERS(`GetConfigFloat("F_Rampart_Radius"));
@@ -4303,7 +4353,7 @@ static function X2AbilityTemplate CoordinateFire()
 
     Template = Attack('F_CoordinateFire', "img:///UILibrary_XPerkIconPack.UIPerk_shot_x2", `GetConfigBool("F_CoordinateFire_bAWC"), true);
     
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Primary, eCost_WeaponConsumeAll, eHostility_Offensive);
 
     PassiveRadius = new class'X2AbilityPassiveAOE_AbilityRadius';
     PassiveRadius.fTargetRadius = `TILESTOMETERS(`GetConfigFloat("F_CoordinateFire_Radius"));
@@ -4734,7 +4784,7 @@ static function X2AbilityTemplate MindBlast()
 
     Template = SelfTargetActivated('F_MindBlast', "img:///UILibrary_FavidsPerkPack.UIPerk_MindBlast", `GetConfigBool("F_MindBlast_bAWC"));
 
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_SQUADDIE_PRIORITY;
+    SetAbilityShotHUDPriority(Template, ePriorityType_Psi, eCost_SingleConsumeAll, eHostility_Offensive);
     Template.AbilitySourceName = 'eAbilitySource_Psionic';
     Template.Hostility = eHostility_Offensive;
 
@@ -4822,10 +4872,10 @@ static function X2AbilityTemplate OverExertion()
 {
     local X2AbilityTemplate             Template;
     local X2Effect_GrantActionPoints    Effect;
-    
+
     Template = SelfTargetActivated('F_OverExertion', "img:///UILibrary_DLC3Images.UIPerk_spark_overdrive", `GetConfigBool("F_OverExertion_bAWC"));
-    
-    Template.ShotHUDPriority = class'UIUtilities_Tactical'.const.CLASS_CAPTAIN_PRIORITY;
+
+    SetAbilityShotHUDPriority(Template, ePriorityType_None, eCost_Free, eHostility_Neutral);
 
     AddCooldown(Template, `GetConfigInt("F_OverExertion_Cooldown"));
     AddCharges(Template, `GetConfigInt("F_OverExertion_Charges"));

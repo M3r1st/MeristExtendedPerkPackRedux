@@ -2,6 +2,11 @@ class X2Effect_GrantShields extends X2Effect_ModifyStats;
 
 var array<int> ShieldAmount;
 
+function bool IsThisEffectBetterThanExistingEffect(const out XComGameState_Effect ExistingEffect)
+{
+    return true;
+}
+
 simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffectParameters, XComGameState_BaseObject kNewTargetState, XComGameState NewGameState, XComGameState_Effect NewEffectState)
 {
     local XComGameState_Item SourceItem;
@@ -30,5 +35,5 @@ simulated protected function OnEffectAdded(const out EffectAppliedData ApplyEffe
 defaultproperties
 {
     EffectName = F_GrantShields
-    DuplicateResponse = eDupe_Allow
+    DuplicateResponse = eDupe_Refresh
 }
