@@ -2436,7 +2436,13 @@ static function X2AbilityTemplate OpenFire()
 // Your Suppression and Area Suppression abilities now deal a small amount of damage to the primary target.
 static function X2AbilityTemplate Havoc()
 {
-    return Passive('F_Havoc', "img:///UILibrary_FavidsPerkPack.UIPerk_Mayhem", `GetConfigBool("F_Havoc_bAWC"), true, true);
+    local X2AbilityTemplate Template;
+
+    Template = Passive('F_Havoc', "img:///UILibrary_FavidsPerkPack.UIPerk_Mayhem", `GetConfigBool("F_Havoc_bAWC"), true, true);
+
+    Template.DefaultSourceItemSlot = eInvSlot_PrimaryWeapon;
+
+    return Template;
 }
 
 // Added in OnPostTemplatesCreated()
@@ -3330,6 +3336,8 @@ static function X2AbilityTemplate ColdBlooded()
     Effect.BuildPersistentEffect(1, true, false);
     Effect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage, false);
     Template.AddTargetEffect(Effect);
+
+    Template.DefaultSourceItemSlot = eInvSlot_PrimaryWeapon;
 
     return Template;
 }
