@@ -174,18 +174,7 @@ LocFriendlyName="Trench Warfare"
 LocFlyOverText="Trench Warfare"
 LocLongDescription="If you get at least one kill during your turn, automatically Hunker Down at the end of it."
 LocHelpText="If you get at least one kill during your turn, automatically Hunker Down at the end of it."
-LocPromotionPopupText="<Bullet> You will only Hunker Down if you would normally be able to.<br><Bullet> If a Ballistic Shield is equipped, then you will use Shield Wall instead."
-
-[F_TrenchWarfare_Activation X2AbilityTemplate]
-LocFriendlyName="Trench Warfare"
-LocFlyOverText="Trench Warfare"
-
-[F_TrenchWarfare_Passive X2AbilityTemplate]
-LocFriendlyName="Trench Warfare"
-LocFlyOverText="Trench Warfare"
-LocLongDescription="If you get at least one kill during your turn, automatically Hunker Down at the end of it."
-LocHelpText="If you get at least one kill during your turn, automatically Hunker Down at the end of it."
-LocPromotionPopupText="<Bullet> You will only Hunker Down if you would normally be able to.<br><Bullet> If a Ballistic Shield is equipped, then you will use Shield Wall instead."
+LocPromotionPopupText="<Bullet> You will only Hunker Down if you would normally be able to."
 
 [F_Compensation X2AbilityTemplate]
 LocFriendlyName="Compensation"

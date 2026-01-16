@@ -26,6 +26,7 @@
     <Folder Include="Src\MeristExtendedPerkPackRedux\Classes\" />
     <Folder Include="Src\XModBase_Interfaces\" />
     <Folder Include="Src\XModBase_Interfaces\Classes\" />
+    <Folder Include="Config\Compatibility\" />
     <Content Include=".gitignore" />
     <Content Include="ModPreview.jpg" />
     <Content Include="ReadMe.txt" />
@@ -122,5 +123,7 @@
     <Content Include="Content\PerkContent_F_HoloTargeting.upk" />
     <Content Include="Src\MeristExtendedPerkPackRedux\Classes\X2Condition_AnimSet.uc" />
     <Content Include="Content\PerkContent_F_Immunize.upk" />
+    <Content Include="Config\Compatibility\XComGameData_SoldierSkills.ini" />
+    <Content Include="Src\MeristExtendedPerkPackRedux\Classes\X2Effect_TrenchWarfare.uc" />
   </ItemGroup>
 </Project>

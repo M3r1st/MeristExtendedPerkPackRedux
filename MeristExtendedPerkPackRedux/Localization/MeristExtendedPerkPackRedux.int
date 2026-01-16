@@ -26,6 +26,17 @@ strDefaultWeapon            = "weapon"
 +LocalizedAbilityNames      = "Pistol Shot"
 
 +LocalizedAbilitiesToHide   = "StandardShot_NoEnd"
++LocalizedAbilitiesToHide   = "HunkerDownNoAnim"
++LocalizedAbilitiesToHide   = "Exv_HunkerDown"
++LocalizedAbilitiesToHide   = "TC_HunkerDownNoAnim"
++LocalizedAbilitiesToHide   = "M31_PA_Coil_Hunker"
++LocalizedAbilitiesToHide   = "M31_Entrench"
++LocalizedAbilitiesToHide   = "M31_Entrench_Trigger"
++LocalizedAbilitiesToHide   = "MetionShield"
++LocalizedAbilitiesToHide   = "ARFMTA_DecrepitudeHunker"
++LocalizedAbilitiesToHide   = "BXShieldWall"
++LocalizedAbilitiesToHide   = "ImperialShieldWall"
++LocalizedAbilitiesToHide   = "MandalorianShieldWall"
 
 [X2Effect_EPPCombatDrugs]
 

@@ -43,11 +43,6 @@ static event OnPostTemplatesCreated()
         PatchAbilityForImposition(AbilityTemplateManager.FindAbilityTemplate(AbilityName));
     }
 
-    foreach class'X2Ability_ExtendedPerkPack'.default.TrenchWarfare_AllowedAbilities(AbilityName)
-    {
-        PatchAbilityForTrenchWarfare(AbilityTemplateManager.FindAbilityTemplate(AbilityName));
-    }
-
     foreach class'X2Ability_ExtendedPerkPack'.default.Botnet_AllowedAbilities(AbilityName)
     {
         PatchAbilityForBotnet(AbilityTemplateManager.FindAbilityTemplate(AbilityName));
@@ -110,15 +105,6 @@ static function PatchAbilityForImposition(X2AbilityTemplate Template)
     {
         `LOG(Template.DataName, default.bLog, GetFuncName());
         AddEffectToAbility(Template, class'X2Ability_ExtendedPerkPack'.static.ImpositionEffect());
-    }
-}
-
-static function PatchAbilityForTrenchWarfare(X2AbilityTemplate Template)
-{
-    if (Template != none)
-    {
-        `LOG(Template.DataName, default.bLog, GetFuncName());
-        Template.AbilityTriggers.AddItem(class'X2Ability_ExtendedPerkPack'.static.TrenchWarfareTrigger());
     }
 }
 

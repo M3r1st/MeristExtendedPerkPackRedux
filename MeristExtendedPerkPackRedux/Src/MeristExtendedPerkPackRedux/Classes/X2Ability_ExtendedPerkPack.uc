@@ -7,7 +7,6 @@ var config array<name> LickYourWounds_AllowedAbilities;
 var config array<name> ThousandsToGo_ExcludeCharacterGroups;
 var config array<name> Recharge_ExcludeCharacterGroups;
 var config array<name> Imposition_AllowedAbilities;
-var config array<name> TrenchWarfare_AllowedAbilities;
 var config array<name> Compensation_AllowedAbilities;
 var config array<name> Botnet_AllowedAbilities;
 var config array<name> ReadyForAnything_AllowedAbilities;
@@ -79,8 +78,6 @@ static function array<X2DataTemplate> CreateTemplates()
     /*>>*/Templates.AddItem(LockNLoadPassive());
     Templates.AddItem(Imposition());
     Templates.AddItem(TrenchWarfare());
-    /*>>*/Templates.AddItem(TrenchWarfareActivation());
-    /*>>*/Templates.AddItem(TrenchWarfarePassive());
     Templates.AddItem(Compensation());
     Templates.AddItem(FirstStrike());
     Templates.AddItem(DisablingShot());
@@ -1055,97 +1052,17 @@ static function X2Effect_PersistentStatChange ImpositionEffect()
 // If you get at least one kill during your turn, automatically hunker down at the end of it. Passive.
 static function X2AbilityTemplate TrenchWarfare()
 {
-    local X2AbilityTemplate                 Template;
-    local X2AbilityTrigger_EventListener    Trigger;
-    local X2Effect_IncrementUnitValue       ValueEffect;
+    local X2AbilityTemplate         Template;
+    local X2Effect_TrenchWarfare    Effect;
 
-    Template = SelfTargetTrigger('F_TrenchWarfare', "img:///UILibrary_FavidsPerkPack.UIPerk_TrenchWarfare");
+    Template = Passive('F_TrenchWarfare', "img:///UILibrary_FavidsPerkPack.UIPerk_TrenchWarfare", `GetConfigBool("F_TrenchWarfare_bAWC"), true, true);
 
-    Template.bCrossClassEligible = `GetConfigBool("F_TrenchWarfare_bAWC");
-    
-    Trigger = new class'X2AbilityTrigger_EventListener';
-    Trigger.ListenerData.Deferral = ELD_OnStateSubmitted;
-    Trigger.ListenerData.EventID = 'KillMail';
-    Trigger.ListenerData.Filter = eFilter_Unit;
-    Trigger.ListenerData.EventFn = class'XComGameState_Ability'.static.AbilityTriggerEventListener_Self;
-    Trigger.ListenerData.Priority = 50;
-    Template.AbilityTriggers.AddItem(Trigger);
-
-    ValueEffect = new class'X2Effect_IncrementUnitValue';
-    ValueEffect.UnitName = 'F_TrenchWarfare_KillsThisTurn';
-    ValueEffect.NewValueToSet = 1;
-    ValueEffect.CleanupType = eCleanup_BeginTurn;
-    Template.AddTargetEffect(ValueEffect);
-
-    Template.bShowActivation = true;
-
-    Template.AdditionalAbilities.AddItem('F_TrenchWarfare_Activation');
-    Template.AdditionalAbilities.AddItem('F_TrenchWarfare_Passive');
+    Effect = new class'X2Effect_TrenchWarfare';
+    Effect.BuildPersistentEffect(1, true, false);
+    Effect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage, false);
+    Template.AddTargetEffect(Effect);
 
     return Template;
-}
-
-static function X2AbilityTemplate TrenchWarfareActivation()
-{
-    local X2AbilityTemplate                 Template;
-    local X2AbilityTrigger_EventListener    Trigger;
-    local X2Condition_UnitEffects           EffectsCondition;
-    local X2Condition_UnitValue             ValueCondition;
-    local X2Effect_GrantActionPoints        ActionPointEffect;
-
-    Template = SelfTargetTrigger('F_TrenchWarfare_Activation', "img:///UILibrary_FavidsPerkPack.UIPerk_TrenchWarfare");
-    
-    Trigger = new class'X2AbilityTrigger_EventListener';
-    Trigger.ListenerData.Deferral = ELD_OnStateSubmitted;
-    Trigger.ListenerData.EventID = 'PlayerTurnEnded';
-    Trigger.ListenerData.Filter = eFilter_Player;
-    Trigger.ListenerData.EventFn = class'XComGameState_Ability'.static.AbilityTriggerEventListener_Self;
-    Trigger.ListenerData.Priority = 45;
-    Template.AbilityTriggers.AddItem(Trigger);
-
-    // Require not already hunkered down
-    EffectsCondition = new class'X2Condition_UnitEffects';
-    EffectsCondition.AddExcludeEffect('HunkerDown', 'AA_UnitIsImmune');
-    Template.AbilityTargetConditions.AddItem(EffectsCondition);
-
-    // Require that a kill has been made
-    ValueCondition = new class'X2Condition_UnitValue';
-    ValueCondition.AddCheckValue('F_TrenchWarfare_KillsThisTurn', 0, eCheck_GreaterThan);
-    Template.AbilityTargetConditions.AddItem(ValueCondition);
-
-    ActionPointEffect = new class'X2Effect_GrantActionPoints';
-    ActionPointEffect.PointType = class'X2CharacterTemplateManager'.default.DeepCoverActionPoint;
-    ActionPointEffect.NumActionPoints = 1;
-    ActionPointEffect.bApplyOnlyWhenOut = true;
-    Template.AddTargetEffect(ActionPointEffect);
-
-    Template.PostActivationEvents.AddItem('F_TrenchWarfare');
-
-    return Template;
-}
-
-static function X2AbilityTemplate TrenchWarfarePassive()
-{
-    local X2AbilityTemplate Template;
-
-    Template = Passive('F_TrenchWarfare_Passive', "img:///UILibrary_FavidsPerkPack.UIPerk_TrenchWarfare", false, true, true);
-
-    return Template;
-}
-
-// Added in OnPostTemplatesCreated()
-static function X2AbilityTrigger_EventListener TrenchWarfareTrigger()
-{
-    local X2AbilityTrigger_EventListener Trigger;
-
-    Trigger = new class'X2AbilityTrigger_EventListener';
-    Trigger.ListenerData.Deferral = ELD_OnStateSubmitted;
-    Trigger.ListenerData.EventID = 'F_TrenchWarfare';
-    Trigger.ListenerData.Filter = eFilter_Unit;
-    Trigger.ListenerData.EventFn = class'XComGameState_Ability'.static.AbilityTriggerEventListener_Self;
-    Trigger.ListenerData.Priority = 80;
-
-    return Trigger;
 }
 
 // Compensation
