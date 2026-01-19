@@ -1439,6 +1439,7 @@ static function X2AbilityTemplate Resupply()
 
     AddCooldown(Template, `GetConfigInt("F_Resupply_Cooldown"));
     AddCharges(Template, `GetConfigInt("F_Resupply_Charges"));
+    AddActionPointCost(Template, eCost_Single);
 
     // Create an effect that reloads ammo
     Effect = new class'X2Effect_ReloadWeapon';
