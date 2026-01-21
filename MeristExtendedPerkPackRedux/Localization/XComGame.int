@@ -116,15 +116,15 @@ LocPromotionPopupText="<Bullet> Does not activate when killing the Lost."
 [F_Recharge X2AbilityTemplate]
 LocFriendlyName="Recharge"
 LocFlyOverText="Recharge"
-LocLongDescription="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldown of all abilities by <Ability:F_Recharge_CooldownReduction>."
-LocHelpText="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldown of all abilities by <Ability:F_Recharge_CooldownReduction>."
+LocLongDescription="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldowns of all abilities by <Ability:F_Recharge_CooldownReduction>."
+LocHelpText="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldowns of all abilities by <Ability:F_Recharge_CooldownReduction>."
 LocPromotionPopupText="<Bullet> Abilities without a cooldown are unaffected.<br><Bullet> Does not activate when killing the Lost."
 
 [F_Recharge_Passive X2AbilityTemplate]
 LocFriendlyName="Recharge"
 LocFlyOverText="Recharge"
-LocLongDescription="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldown of all abilities by <Ability:F_Recharge_CooldownReduction>."
-LocHelpText="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldown of all abilities by <Ability:F_Recharge_CooldownReduction>."
+LocLongDescription="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldowns of all abilities by <Ability:F_Recharge_CooldownReduction>."
+LocHelpText="Killing an enemy with your <Ability:F_BoundWeaponName> reduces the cooldowns of all abilities by <Ability:F_Recharge_CooldownReduction>."
 LocPromotionPopupText="<Bullet> Abilities without a cooldown are unaffected.<br><Bullet> Does not activate when killing the Lost."
 
 [F_PierceTheVeil X2AbilityTemplate]
@@ -551,7 +551,7 @@ LocFlyOverText="Fire First"
 [F_Flatline X2AbilityTemplate]
 LocFriendlyName="Flatline"
 LocFlyOverText="Flatline"
-LocLongDescription="Take a <Ability:F_BoundWeaponName> that deals +<Ability:F_Flatline_DamageBonus> damage and applies +<Ability:F_Flatline_Rupture> rupture. Uses <Ability:F_SelfAmmoCost> ammo. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocLongDescription="Take a <Ability:F_BoundWeaponName> shot that deals +<Ability:F_Flatline_DamageBonus> damage and applies +<Ability:F_Flatline_Rupture> rupture. Uses <Ability:F_SelfAmmoCost> ammo. Has a <Ability:F_SelfCooldown>-turn cooldown."
 LocHelpText="Special <Ability:F_BoundWeaponName> that deals +<Ability:F_Flatline_DamageBonus> damage and applies +<Ability:F_Flatline_Rupture> rupture. Uses <Ability:F_SelfAmmoCost> ammo."
 LocPromotionPopupText="<Bullet> Rupture from multiple attacks doesn't stack. Higher rupture value overwrites the lower one.<br>
 <Bullet> The rupture of the attack is equal to the sum of the rupture from the weapon, ammo and ability."
@@ -716,7 +716,7 @@ LocFriendlyName="Intimidate"
 LocFlyOverText="Intimidate"
 LocLongDescription="When targeted by an attack, the enemy has a chance to panic."
 LocHelpText="When targeted by an attack, the enemy has a chance to panic."
-LocPromotionPopupText="<Bullet> Intimidate's chance to panic the attacker increases with the tier of your <Ability:SecondaryWeaponName>.<br><Bullet> Intimidate will not trigger when targeted by reaction fire."
+LocPromotionPopupText="<Bullet> Intimidate's chance to panic the attacker increases with the tier of your <Ability:F_BoundWeaponName>.<br><Bullet> Intimidate will not trigger when targeted by reaction fire."
 
 [F_Intimidate_Trigger X2AbilityTemplate]
 LocFriendlyName="Intimidate"
@@ -725,8 +725,8 @@ LocFlyOverText="Intimidate"
 [F_Rampart X2AbilityTemplate]
 LocFriendlyName="Rampart"
 LocFlyOverText="Rampart"
-LocLongDescription="Activate to reduce all damage taken by the <Ability:ClassName> and all allies within <Ability:F_Rampart_Radius> tiles by <Ability:F_Rampart_DamageReduction>. <Ability:F_FreeAction>. Has a <Ability:F_SelfCooldown>-turn cooldown."
-LocHelpText="Activate to reduce all damage taken by the <Ability:ClassName> and all allies within <Ability:F_Rampart_Radius> tiles by <Ability:F_Rampart_DamageReduction>."
+LocLongDescription="Activate to reduce all damage taken by the <Ability:ClassName> and all allies within <Ability:F_Rampart_Radius> tiles by <Ability:F_Rampart_DamageReduction> for <Ability:F_Rampart_Duration> turn(s). <Ability:F_FreeAction>. Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocHelpText="Activate to reduce all damage taken by the <Ability:ClassName> and all allies within <Ability:F_Rampart_Radius> tiles by <Ability:F_Rampart_DamageReduction> for <Ability:F_Rampart_Duration> turn(s)."
 LocPromotionPopupText="<Bullet> Allies must within <Ability:F_Rampart_Radius> tiles of the <Ability:ClassName> to gain the bonus<br><Bullet> <Ability:F_FreeAction>.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
 
 [F_Rampart_Trigger X2AbilityTemplate]

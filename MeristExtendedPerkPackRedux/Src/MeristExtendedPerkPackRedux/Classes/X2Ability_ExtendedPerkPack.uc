@@ -2001,7 +2001,7 @@ static function X2AbilityTemplate QuickFeet()
     Trigger.ListenerData.EventID = 'AbilityActivated';
     Trigger.ListenerData.Filter = eFilter_Unit;
     Trigger.ListenerData.EventFn = AbilityTriggerEventListener_QuickFeet;
-    Trigger.ListenerData.Priority = 50;
+    Trigger.ListenerData.Priority = 45;
     Template.AbilityTriggers.AddItem(Trigger);
 
     ActionPointEffect = new class'X2Effect_GrantActionPoints';
