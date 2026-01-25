@@ -475,7 +475,14 @@ static function EventListenerReturn AbilityTriggerEventListener_BuffMe(Object Ev
 
         VisualizeIndex = GameState.HistoryIndex;
 
-        if (CallbackAbilityState.OwnerStateObject.ObjectID == TargetUnit.ObjectID)
+        if (CallbackAbilityState.OwnerStateObject.ObjectID != TargetUnit.ObjectID)
+        {
+            if (CallbackAbilityState.CanActivateAbilityForObserverEvent(TargetUnit) == 'AA_Success')
+            {
+                CallbackAbilityState.AbilityTriggerAgainstSingleTarget(TargetUnit.GetReference(), false, VisualizeIndex);
+            }
+        }
+        else
         {
             foreach History.IterateByClassType(class'XComGameState_Unit', TargetUnit,,, GameState.HistoryIndex)
             {
