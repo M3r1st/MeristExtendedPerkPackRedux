@@ -2606,12 +2606,9 @@ static function EventListenerReturn AbilityTriggerEventListener_ProtectAndServe(
             return ELR_NoInterrupt;
         }
 
-        if (CallbackAbilityState.SourceWeapon.ObjectID > 0 && CallbackAbilityState.SourceWeapon.ObjectID == AbilityContext.InputContext.ItemObject.ObjectID)
+        if (default.ProtectAndServe_AllowedAbilities.Find(ActivatedAbilityState.GetMyTemplateName()) != INDEX_NONE)
         {
-            if (default.ProtectAndServe_AllowedAbilities.Find(ActivatedAbilityState.GetMyTemplateName()) != INDEX_NONE)
-            {
-                return CallbackAbilityState.AbilityTriggerEventListener_Self(EventData, EventSource, GameState, EventID, CallbackData);
-            }
+            return CallbackAbilityState.AbilityTriggerEventListener_Self(EventData, EventSource, GameState, EventID, CallbackData);
         }
     }
 
