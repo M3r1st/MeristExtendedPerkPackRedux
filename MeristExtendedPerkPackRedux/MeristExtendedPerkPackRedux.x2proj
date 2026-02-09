@@ -27,6 +27,8 @@
     <Folder Include="Src\MeristExtendedPerkPackRedux\Classes\" />
     <Folder Include="Src\XModBase_Interfaces\" />
     <Folder Include="Src\XModBase_Interfaces\Classes\" />
+    <Folder Include="Src\MeristBuffMe\" />
+    <Folder Include="Src\MeristBuffMe\Classes\" />
     <Content Include="Content\UILibrary_SOHunter.upk" />
     <Content Include="ModPreview.jpg" />
     <Content Include="ReadMe.txt" />
@@ -123,5 +125,7 @@
     <Content Include="Src\MeristExtendedPerkPackRedux\Classes\XMBEffect_AddUtilityItem.uc" />
     <Content Include="Src\XModBase_Interfaces\Classes\XMBEffectInterface.uc" />
     <Content Include="Src\XModBase_Interfaces\Classes\XMBOverrideInterface.uc" />
+    <Content Include="Src\MeristBuffMe\Classes\X2Ability_BuffMe.uc" />
+    <Content Include="Src\MeristBuffMe\Classes\X2DLCInfo_MeristBuffMe.uc" />
   </ItemGroup>
 </Project>

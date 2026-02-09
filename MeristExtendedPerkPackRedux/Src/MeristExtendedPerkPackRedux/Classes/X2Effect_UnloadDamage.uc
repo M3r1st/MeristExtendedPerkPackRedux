@@ -14,7 +14,7 @@ function float GetPostDefaultAttackingDamageModifier_CH(XComGameState_Effect Eff
         {
             if (CurrentDamage > 0)
             {
-                return CurrentDamage * DamagePenalty / 100;
+                return -1 * FMin(CurrentDamage, CurrentDamage * DamagePenalty / 100.0f);
             }
         }
     }
