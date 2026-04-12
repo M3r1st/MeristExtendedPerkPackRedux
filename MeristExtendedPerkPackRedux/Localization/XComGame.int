@@ -348,7 +348,7 @@ LocFriendlyName="Unload"
 LocFlyOverText="Unload"
 LocLongDescription="Fire your <Ability:F_BoundWeaponName> at the target until you run out of ammo or the target is dead. Shots cannot crit and deal less damage than a standard shot. Has a <Ability:F_SelfCooldown>-turn cooldown."
 LocHelpText="Fire your <Ability:F_BoundWeaponName> at the target until you run out of ammo or the target is dead. Shots cannot crit and deal less damage than a standard shot."
-LocPromotionPopupText="<Bullet> Shots cannot crit.<br><Bullet> Each shot has an aim penalty of -<Ability:F_Unload_ToHitMod> and deals <Ability:F_Unload_DamagePenalty>% less damage than a standard shot.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocPromotionPopupText="<Bullet> Shots cannot crit.<br><Bullet> Each shot has an aim penalty of -<Ability:F_Unload_ToHitMod> and deals <Ability:F_Unload_DamagePenalty>% less damage than a standard shot.<br><Bullet> Cannot be used with weapons that have unlimited ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
 
 [F_Unload2 X2AbilityTemplate]
 LocFriendlyName="Unload"

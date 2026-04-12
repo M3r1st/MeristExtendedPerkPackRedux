@@ -26,7 +26,7 @@ function int GetDefendingDamageModifier( XComGameState_Effect EffectState, XComG
     {
         if (CurrentDamage > 0)
         {
-            return -1 * Min(CurrentDamage, AsTargetDamageBonus);
+            return Max(-1 * CurrentDamage, AsTargetDamageBonus);
         }
     }
 }
