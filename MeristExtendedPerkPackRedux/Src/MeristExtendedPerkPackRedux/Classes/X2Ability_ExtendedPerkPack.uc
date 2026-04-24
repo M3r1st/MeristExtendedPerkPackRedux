@@ -1485,7 +1485,7 @@ static function X2AbilityTemplate Immunize()
     UnitPropertyCondition.ExcludeFriendlyToSource = false;
     UnitPropertyCondition.RequireSquadmates = true;
     UnitPropertyCondition.FailOnNonUnits = true;
-    Template.AbilityMultiTargetConditions.AddItem(UnitPropertyCondition);
+    Template.AbilityTargetConditions.AddItem(UnitPropertyCondition);
 
     Template.AddShooterEffectExclusions();
 
