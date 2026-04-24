@@ -229,14 +229,14 @@ LocPromotionPopupText="<Bullet> Will not activate if the <Ability:ClassName> is 
 LocFriendlyName="Resupply"
 LocFlyOverText="Resupply"
 LocLongDescription="Refill the primary weapon ammo of all allies. Has <Ability:F_SelfCharges> charge(s) per mission."
-LocHelpText="Refill the primary weapon ammo of all allies. Has <Ability:F_SelfCharges> charge(s) per mission."
+LocHelpText="Refill the primary weapon ammo of all allies."
 LocPromotionPopupText=""
 
 [F_Immunize X2AbilityTemplate]
 LocFriendlyName="Immunize"
 LocFlyOverText="Immunize"
 LocLongDescription="Send the GREMLIN to an ally, granting them immunity to damage until the beginning of next turn. Has <Ability:F_SelfCharges> charge(s) per mission."
-LocHelpText="Send the GREMLIN to an ally, granting them immunity to damage until the beginning of next turn. Has <Ability:F_SelfCharges> charge(s) per mission."
+LocHelpText="Send the GREMLIN to an ally, granting them immunity to damage until the beginning of next turn."
 LocPromotionPopupText=""
 
 [F_Rush X2AbilityTemplate]
