@@ -2723,15 +2723,12 @@ static function EventListenerReturn AbilityTriggerEventListener_Adrenaline(Objec
     if (AbilityContext != none && AbilityContext.InterruptionStatus != eInterruptionStatus_Interrupt)
     {
         CallbackAbilityState = XComGameState_Ability(CallbackData);
-        if (CallbackAbilityState.SourceWeapon.ObjectID == AbilityContext.InputContext.ItemObject.ObjectID)
+        TargetUnit = XComGameState_Unit(EventData);
+        if (TargetUnit != none)
         {
-            TargetUnit = XComGameState_Unit(EventData);
-            if (TargetUnit != none)
+            if (default.Adrenaline_ExcludeCharacterGroups.Find(TargetUnit.GetMyTemplateGroupName()) == INDEX_NONE)
             {
-                if (default.Adrenaline_ExcludeCharacterGroups.Find(TargetUnit.GetMyTemplateGroupName()) == INDEX_NONE)
-                {
-                    return CallbackAbilityState.AbilityTriggerEventListener_Self(EventData, EventSource, GameState, EventID, CallbackData);
-                }
+                return CallbackAbilityState.AbilityTriggerEventListener_Self(EventData, EventSource, GameState, EventID, CallbackData);
             }
         }
     }
