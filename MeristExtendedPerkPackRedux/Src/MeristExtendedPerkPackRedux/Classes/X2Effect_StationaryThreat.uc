@@ -25,7 +25,7 @@ function RegisterForEvents(XComGameState_Effect EffectGameState)
     EventMgr.RegisterForEvent(EffectObj, 'UnitMoveFinished', OnUnitMoveFinished, ELD_OnStateSubmitted,, UnitState,, EffectObj);
 }
 
-function int GetAttackingDamageModifier( XComGameState_Effect EffectState, XComGameState_Unit Attacker, Damageable TargetDamageable, XComGameState_Ability AbilityState, const out EffectAppliedData AppliedData, const int CurrentDamage, optional XComGameState NewGameState)
+function int GetAttackingDamageModifier(XComGameState_Effect EffectState, XComGameState_Unit Attacker, Damageable TargetDamageable, XComGameState_Ability AbilityState, const out EffectAppliedData AppliedData, const int CurrentDamage, optional XComGameState NewGameState)
 {
     local UnitValue CountUnitValue;
 
