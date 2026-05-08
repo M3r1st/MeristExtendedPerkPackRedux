@@ -2626,7 +2626,7 @@ static function X2AbilityTemplate BolsteredWall()
     Template = Passive('F_BolsteredWall', "img:///UILibrary_XPerkIconPack.UIPerk_defense_move2", `GetConfigBool("F_BolsteredWall_bAWC"), true, true);
 
     Effect = new class'X2Effect_BolsteredWall';
-    Effect.EffectName = 'F_FaultlessDefense';
+    Effect.EffectName = 'F_BolsteredWall';
     Effect.DodgeBonus = `GetConfigInt("F_BolsteredWall_DodgeBonus");
     Effect.AllowedEffects = default.BolsteredWall_AllowedEffects;
     Effect.BuildPersistentEffect(1, true, false);
