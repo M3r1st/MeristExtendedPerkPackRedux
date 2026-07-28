@@ -410,7 +410,7 @@ static function bool IsFlanking(XComGameState_Unit Attacker, XComGameState_Unit 
 {
     local GameRulesCache_VisibilityInfo VisInfo;
 
-    if (Attacker.CanFlank() && Target.CanTakeCover())
+    if (Attacker.CanFlank() && Target.GetMyTemplate().bCanTakeCover)
     {
         if (`TACTICALRULES.VisibilityMgr.GetVisibilityInfo(Attacker.ObjectID, Target.ObjectID, VisInfo))
         {
