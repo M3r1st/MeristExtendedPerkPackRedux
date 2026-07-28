@@ -375,6 +375,7 @@ static function X2AbilityTemplate StationaryThreat()
     Effect.MaxTurns = `GetConfigInt("F_StationaryThreat_MaxTurns");
     Effect.StartingValue = `GetConfigInt("F_StationaryThreat_StartingValue");
     Effect.bMatchSourceWeapon = `GetConfigBool("F_StationaryThreat_bMatchSourceWeapon");
+    Effect.bShowFlyover = `GetConfigBool("F_StationaryThreat_bShowFlyover");
     Effect.BuildPersistentEffect(1, true, false);
     Effect.SetDisplayInfo(ePerkBuff_Bonus, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage, false);
     Template.AddTargetEffect(Effect);

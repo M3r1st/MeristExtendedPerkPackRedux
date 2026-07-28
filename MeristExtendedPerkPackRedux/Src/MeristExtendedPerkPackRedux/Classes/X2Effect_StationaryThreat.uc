@@ -5,6 +5,7 @@ var bool bMatchSourceWeapon;
 var int DamagePerTurn;
 var int MaxTurns;
 var int StartingValue;
+var bool bShowFlyover;
 
 function RegisterForEvents(XComGameState_Effect EffectGameState)
 {
@@ -89,9 +90,12 @@ static function EventListenerReturn OnPlayerTurnBegun(Object EventData, Object E
                 NewCount = Min(NewCount, CurrentMaxTurns);
                 UnitState.SetUnitFloatValue(Effect.CountValueName, NewCount, eCleanup_BeginTactical);
 
-                NewGameState.ModifyStateObject(class'XComGameState_Ability', EffectState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID);
-                // XComGameStateContext_ChangeContainer(NewGameState.GetContext()).BuildVisualizationFn = EffectState.ForwardOperatorVisualizationFn;
-                XComGameStateContext_ChangeContainer(NewGameState.GetContext()).BuildVisualizationFn = EffectState.TriggerAbilityFlyoverVisualizationFn;
+                if (Effect.bShowFlyover)
+                {
+                    NewGameState.ModifyStateObject(class'XComGameState_Ability', EffectState.ApplyEffectParameters.AbilityStateObjectRef.ObjectID);
+                    // XComGameStateContext_ChangeContainer(NewGameState.GetContext()).BuildVisualizationFn = EffectState.ForwardOperatorVisualizationFn;
+                    XComGameStateContext_ChangeContainer(NewGameState.GetContext()).BuildVisualizationFn = EffectState.TriggerAbilityFlyoverVisualizationFn;
+                }
 
                 `TACTICALRULES.SubmitGameState(NewGameState);
             }
