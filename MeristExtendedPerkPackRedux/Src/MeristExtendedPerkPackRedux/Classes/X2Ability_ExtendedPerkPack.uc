@@ -1748,7 +1748,7 @@ static function X2AbilityTemplate Steadfast()
 
     Effect = new class'X2Effect_DamageImmunity';
     Effect.EffectName = 'F_Steadfast';
-    Effect.DuplicateResponse = eDupe_Refresh;
+    Effect.DuplicateResponse = eDupe_Ignore;
     Effect.ImmuneTypes.AddItem('Mental');
     Effect.ImmuneTypes.AddItem(class'X2Item_DefaultDamageTypes'.default.DisorientDamageType);
     Effect.ImmuneTypes.AddItem('Stun');
