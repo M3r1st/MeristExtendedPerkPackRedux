@@ -1700,14 +1700,14 @@ static function X2AbilityTemplate Triage()
         BleedingOutCondition.ExcludeFriendlyToSource = false;
         BleedingOutCondition.IsBleedingOut = true;
 
+        UnconsciousEffect = class'X2StatusEffects'.static.CreateUnconsciousStatusEffect(, true);
+        UnconsciousEffect.TargetConditions.AddItem(BleedingOutCondition);
+        Template.AddMultiTargetEffect(UnconsciousEffect);
+
         RemoveBleedOut = new class'X2Effect_RemoveEffects';
         RemoveBleedOut.EffectNamesToRemove.AddItem(class'X2StatusEffects'.default.BleedingOutName);
         RemoveBleedOut.TargetConditions.AddItem(BleedingOutCondition);
-        Template.AddTargetEffect(RemoveBleedOut);
-
-        UnconsciousEffect = class'X2StatusEffects'.static.CreateUnconsciousStatusEffect(, true);
-        UnconsciousEffect.TargetConditions.AddItem(BleedingOutCondition);
-        Template.AddTargetEffect(UnconsciousEffect);
+        Template.AddMultiTargetEffect(RemoveBleedOut);
     }
     else
     {
