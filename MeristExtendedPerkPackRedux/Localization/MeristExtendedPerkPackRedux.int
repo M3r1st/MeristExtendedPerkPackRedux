@@ -3,6 +3,7 @@
 LikeLightning_RefundAvailableText   = "The soldier's next Arc Thrower shot this turn will not cost an action."
 PierceTheVeil_BuffText              = "The unit has additional aim, damage and armor piercing against organic enemies."
 PierceTheVeil_DebuffText            = "The unit takes additional damage and is easier to hit."
+Imposition_DebuffName               = "Imposition"
 Imposition_DebuffText               = "The unit's aim is reduced."
 Botnet_BuffText                     = "The unit's standard shots reduce the hack defense of the robotic targets."
 Immunize_BuffText                   = "The unit is immune to damage."

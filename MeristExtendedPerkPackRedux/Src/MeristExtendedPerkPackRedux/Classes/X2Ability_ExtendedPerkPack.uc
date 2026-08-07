@@ -36,6 +36,7 @@ var config array<name> PackTactics_AllowedEffects;
 var localized string LikeLightning_RefundAvailableText;
 var localized string PierceTheVeil_BuffText;
 var localized string PierceTheVeil_DebuffText;
+var localized string Imposition_DebuffName;
 var localized string Imposition_DebuffText;
 var localized string Botnet_BuffText;
 var localized string Immunize_BuffText;
@@ -1021,12 +1022,8 @@ static function X2AbilityTemplate Imposition()
 // Added in OnPostTemplatesCreated()
 static function X2Effect_PersistentStatChange ImpositionEffect()
 {
-    local X2AbilityTemplate                 Template;
     local X2Effect_PersistentStatChange     Effect;
     local X2Condition_SoldierAbilities      Condition;
-
-    // Get the template that we'll use for this effect's display info
-    Template = Imposition();
 
     // Effect that reduces aim
     Effect = new class'X2Effect_PersistentStatChange';
@@ -1035,7 +1032,7 @@ static function X2Effect_PersistentStatChange ImpositionEffect()
     Effect.AddPersistentStatChange(eStat_Offense, -1 * `GetConfigInt("F_Imposition_AimPenalty"));
     Effect.BuildPersistentEffect(`GetConfigInt("F_Imposition_Duration"), false, false, false, eGameRule_PlayerTurnBegin);
     Effect.bUseSourcePlayerState = true;
-    Effect.SetDisplayInfo(ePerkBuff_Penalty, Template.LocFriendlyName, default.Imposition_DebuffText, Template.IconImage,,, Template.AbilitySourceName);
+    Effect.SetDisplayInfo(ePerkBuff_Penalty, default.Imposition_DebuffName, default.Imposition_DebuffText, "img:///UILibrary_FavidsPerkPack.UIPerk_Imposition",,, 'eAbilitySource_Perk');
     Effect.SetupEffectOnShotContextResult(true, `GetConfigBool("F_Imposition_bApplyOnMiss"));
     // Effect.VisualizationFn = EffectFlyoverVisualization;
 
@@ -4536,7 +4533,7 @@ static function X2AbilityTemplate ParryAttack()
     `CREATE_X2ABILITY_TEMPLATE(Template, 'F_Parry_Attack');
 
     Template.IconImage = "img:///UILibrary_LW_Overhaul.LW_AbilityCombatives";
-    Template.AbilitySourceName = 'eAbilitySource_Perk'; 
+    Template.AbilitySourceName = 'eAbilitySource_Perk';
     Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
     Template.Hostility = eHostility_Offensive;
     Template.DisplayTargetHitChance = true;
