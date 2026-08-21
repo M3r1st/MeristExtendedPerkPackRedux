@@ -2152,7 +2152,7 @@ static function X2AbilityTemplate Unload2()
     Template.eAbilityIconBehaviorHUD = EAbilityIconBehavior_NeverShow;
     
     ToHitCalc = new class'X2AbilityToHitCalc_StandardAim';
-    ToHitCalc.BuiltInHitMod = -1 * `GetConfigInt("F_Unload_ToHitPenalty");
+    ToHitCalc.BuiltInHitMod = `GetConfigInt("F_Unload_ToHitMod");
     ToHitCalc.bAllowCrit = `GetConfigBool("F_Unload_bAllowCrit");
     Template.AbilityToHitCalc = ToHitCalc;
     Template.AbilityToHitOwnerOnMissCalc = ToHitCalc;
