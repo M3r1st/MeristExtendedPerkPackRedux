@@ -3,8 +3,8 @@ class X2Effect_ChangeHitResultForAttacker extends X2Effect_Persistent;
 var EAbilityHitResult ChangeHitResults[EAbilityHitResult.EnumCount]<BoundEnum=EAbilityHitResult>;
 var bool bMatchSourceWeapon;
 
-var name CountValueName;
-var int ActivationsPerTurn;
+// var name CountValueName;
+// var int ActivationsPerTurn;
 
 var bool bShowFlyover;
 var name FlyoverEventName;
@@ -35,7 +35,7 @@ function bool ChangeHitResultForAttacker(
 {
     local XComGameState_Ability EffectAbilityState;
     local XComGameState_Effect EffectState;
-    local UnitValue CountUnitValue;
+    // local UnitValue CountUnitValue;
 
     if (CurrentResult != ChangeHitResults[CurrentResult])
     {
@@ -52,15 +52,16 @@ function bool ChangeHitResultForAttacker(
                 return false;
             }
         }
-        
-        if (CountValueName != '')
-        {
-            Attacker.GetUnitValue(CountValueName, CountUnitValue);
-            if (ActivationsPerTurn > 0 && CountUnitValue.fValue >= ActivationsPerTurn)
-                return false;
 
-            Attacker.SetUnitFloatValue(CountValueName, CountUnitValue.fValue + 1, eCleanup_BeginTurn);
-        }
+        // THIS IS EDITING HISTORY
+        // if (CountValueName != '')
+        // {
+        //     Attacker.GetUnitValue(CountValueName, CountUnitValue);
+        //     if (ActivationsPerTurn > 0 && CountUnitValue.fValue >= ActivationsPerTurn)
+        //         return false;
+
+        //     Attacker.SetUnitFloatValue(CountValueName, CountUnitValue.fValue + 1, eCleanup_BeginTurn);
+        // }
 
         if (bShowFlyover && FlyoverEventName != '')
         {
