@@ -2404,6 +2404,9 @@ static function X2AbilityTemplate WarningShot()
     Template.AddTargetEffect(class'X2Ability_GrenadierAbilitySet'.static.HoloTargetEffect());
     Template.AddTargetEffect(class'X2StatusEffects'.static.CreatePanickedStatusEffect());
 
+    Template.bOverrideVisualResult = true;
+    Template.OverrideVisualResult = eHit_Miss;
+
     Template.DefaultSourceItemSlot = eInvSlot_PrimaryWeapon;
 
     return Template;
