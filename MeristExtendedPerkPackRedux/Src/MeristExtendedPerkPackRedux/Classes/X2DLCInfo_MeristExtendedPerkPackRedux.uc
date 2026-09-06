@@ -53,11 +53,6 @@ static event OnPostTemplatesCreated()
         PatchAbilityForBloodlet(AbilityTemplateManager.FindAbilityTemplate(AbilityName));
     }
 
-    foreach class'X2Ability_ExtendedPerkPack'.default.Havoc_AllowedAbilities(AbilityName)
-    {
-        PatchAbilityForHavoc(AbilityTemplateManager.FindAbilityTemplate(AbilityName));
-    }
-
     foreach class'X2Ability_ExtendedPerkPack'.default.ShieldTrauma_IncludeAbilities(AbilityName)
     {
         PatchAbilityForShieldTrauma(AbilityTemplateManager.FindAbilityTemplate(AbilityName));
@@ -122,18 +117,6 @@ static function PatchAbilityForBloodlet(X2AbilityTemplate Template)
     if (Template != none)
     {
         AddEffectToAbility(Template, class'X2Ability_ExtendedPerkPack'.static.BloodletEffect());
-    }
-}
-
-static function PatchAbilityForHavoc(X2AbilityTemplate Template)
-{
-    local X2Effect Effect;
-
-    if (Template != none)
-    {
-        `LOG(Template.DataName, default.bLog, GetFuncName());
-        Effect = class'X2Ability_ExtendedPerkPack'.static.HavocEffect();
-        AddEffectToAbility(Template, Effect,, `GetConfigBool("F_Havoc_bApplyToMultiTarget"));
     }
 }
 

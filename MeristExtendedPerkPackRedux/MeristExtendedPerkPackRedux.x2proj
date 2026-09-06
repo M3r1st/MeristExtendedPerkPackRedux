@@ -127,5 +127,6 @@
     <Content Include="Src\XModBase_Interfaces\Classes\XMBOverrideInterface.uc" />
     <Content Include="Src\MeristBuffMe\Classes\X2Ability_BuffMe.uc" />
     <Content Include="Src\MeristBuffMe\Classes\X2DLCInfo_MeristBuffMe.uc" />
+    <Content Include="Src\MeristExtendedPerkPackRedux\Classes\X2Action_Fire_Havoc.uc" />
   </ItemGroup>
 </Project>

@@ -113,6 +113,7 @@ static function array<X2DataTemplate> CreateTemplates()
     Templates.AddItem(WarningShot());
     Templates.AddItem(OpenFire());
     Templates.AddItem(Havoc());
+    /*>>*/Templates.AddItem(HavocPassive());
     Templates.AddItem(Finesse());
     Templates.AddItem(ShoulderToLeanOn());
     /*>>*/Templates.AddItem(ShoulderToLeanOnPassive());
@@ -2438,31 +2439,177 @@ static function X2AbilityTemplate OpenFire()
 // Your Suppression and Area Suppression abilities now deal a small amount of damage to the primary target.
 static function X2AbilityTemplate Havoc()
 {
-    local X2AbilityTemplate Template;
+    local X2AbilityTemplate                 Template;
+    local X2AbilityToHitCalc_StandardAim    ToHitCalc;
+    local X2AbilityTrigger_EventListener    Trigger;
+    local X2Effect_SuppressionDamage        DamageEffect;
 
-    Template = Passive('F_Havoc', "img:///UILibrary_FavidsPerkPack.UIPerk_Mayhem", `GetConfigBool("F_Havoc_bAWC"), true, true);
+
+    `CREATE_X2ABILITY_TEMPLATE(Template, 'F_Havoc');
+
+    Template.IconImage = "img:///UILibrary_XPerkIconPack.UIPerk_shot_suppression";
+    Template.AbilitySourceName = 'eAbilitySource_Perk';
+    Template.eAbilityIconBehaviorHUD = eAbilityIconBehavior_NeverShow;
+    Template.Hostility = eHostility_Neutral;
+    Template.DisplayTargetHitChance = false;
+
+    Template.bCrossClassEligible = `GetConfigBool("F_Havoc_bAWC");
+
+    ToHitCalc = new class'X2AbilityToHitCalc_StandardAim';
+    ToHitCalc.bGuaranteedHit = true;
+    ToHitCalc.bAllowCrit = false;
+    Template.AbilityToHitCalc = ToHitCalc;
+    Template.AbilityTargetStyle = default.SimpleSingleTarget;
+
+    Trigger = new class'X2AbilityTrigger_EventListener';
+    Trigger.ListenerData.Deferral = ELD_OnStateSubmitted;
+    Trigger.ListenerData.EventID = 'AbilityActivated';
+    Trigger.ListenerData.Filter = eFilter_Unit;
+    Trigger.ListenerData.EventFn = AbilityTriggerEventListener_Havoc;
+    Trigger.ListenerData.Priority = 70;
+    Template.AbilityTriggers.AddItem(Trigger);
+
+    Template.AbilityShooterConditions.AddItem(default.LivingShooterProperty);
+
+    DamageEffect = new class'X2Effect_SuppressionDamage';
+    DamageEffect.Damage = `GetConfigArrayInt("F_Havoc_Damage");
+    Template.AddTargetEffect(DamageEffect);
+
+    if (`GetConfigBool("F_Havoc_bApplyToMultiTarget"))
+    {
+        Template.AbilityMultiTargetStyle = new class'X2AbilityMultiTarget_Radius';
+        Template.AddMultiTargetEffect(DamageEffect);
+    }
+
+    Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
+    Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
+    Template.MergeVisualizationFn = Havoc_MergeVisualization;
+
+    Template.bAllowAmmoEffects = `GetConfigBool("F_Havoc_bAllowAmmoEffects");
+    Template.bAllowBonusWeaponEffects = `GetConfigBool("F_Havoc_bAllowBonusWeaponEffects");
+    Template.bAllowFreeFireWeaponUpgrade = false;
+
+    Template.FrameAbilityCameraType = eCameraFraming_Never;
+    Template.bSkipExitCoverWhenFiring = true;
+    Template.bSkipFireAction = false;
+    Template.ActionFireClass = class'X2Action_Fire_Havoc';
+    Template.bShowActivation = false;
+    Template.bUsesFiringCamera = false;
+
+    Template.ConcealmentRule = eConceal_AlwaysEvenWithObjective;
 
     Template.DefaultSourceItemSlot = eInvSlot_PrimaryWeapon;
+
+    Template.AdditionalAbilities.AddItem('F_Havoc_Passive');
 
     return Template;
 }
 
-// Added in OnPostTemplatesCreated()
-static function X2Effect_SuppressionDamage HavocEffect()
+static function EventListenerReturn AbilityTriggerEventListener_Havoc(Object EventData, Object EventSource, XComGameState GameState, Name EventID, Object CallbackData)
 {
-    local X2Effect_SuppressionDamage    Effect;
-    local X2Condition_AbilityProperty   Condition;
+    local XComGameStateHistory          History;
+    local XComGameStateContext_Ability  AbilityContext;
+    local XComGameState_Ability         EventAbilityState, AbilityState;
+    local X2AbilityTemplate             AbilityTemplate;
+    local XComGameState_Unit            SourceUnit;
+    local AvailableAction               Action;
+    local AvailableTarget               Targets;
+    local array<Vector>                 TargetLocations;
+    local XComGameStateContext          FindContext;
+    local int                           VisualizeIndex;
 
-    // Create the bleed status effect
-    Effect = new class'X2Effect_SuppressionDamage';
-    Effect.Damage = `GetConfigArrayInt("F_Havoc_Damage");
+    History = `XCOMHISTORY;
 
-    // Only apply if shooter has Havoc passive
-    Condition = new class'X2Condition_AbilityProperty';
-    Condition.OwnerHasSoldierAbilities.AddItem('F_Havoc');
-    Effect.TargetConditions.AddItem(Condition);
+    AbilityContext = XComGameStateContext_Ability(GameState.GetContext());
 
-    return Effect;
+    if (AbilityContext != none && AbilityContext.InterruptionStatus != eInterruptionStatus_Interrupt)
+    {
+        EventAbilityState = XComGameState_Ability(EventData);
+        AbilityState = XComGameState_Ability(CallbackData);
+        AbilityTemplate = AbilityState.GetMyTemplate();
+        SourceUnit = XComGameState_Unit(EventSource);
+
+        if (default.Havoc_AllowedAbilities.Find(EventAbilityState.GetMyTemplateName()) != INDEX_NONE)
+        {
+            Action.AbilityObjectRef = AbilityState.GetReference();
+            Action.AvailableCode = AbilityState.CanActivateAbility(SourceUnit);
+            Targets.PrimaryTarget = AbilityContext.InputContext.PrimaryTarget;
+            if (AbilityTemplate.AbilityMultiTargetStyle != none)
+            {
+                Targets.AdditionalTargets = AbilityContext.InputContext.MultiTargets;
+            }
+            Action.AvailableTargets.AddItem(Targets);
+            TargetLocations = AbilityContext.InputContext.TargetLocations;
+
+            if (Action.AvailableCode == 'AA_Success')
+            {
+                VisualizeIndex = GameState.HistoryIndex;
+                FindContext = AbilityContext;
+                while (FindContext.InterruptionHistoryIndex > -1)
+                {
+                    FindContext = History.GetGameStateFromHistory(FindContext.InterruptionHistoryIndex).GetContext();
+                    VisualizeIndex = FindContext.AssociatedState.HistoryIndex;
+                }
+
+                class'XComGameStateContext_Ability'.static.ActivateAbility(Action, 0, TargetLocations,,,, VisualizeIndex);
+            }
+        }
+    }
+
+    return ELR_NoInterrupt;
+}
+
+function Havoc_MergeVisualization(X2Action BuildTree, out X2Action VisualizationTree)
+{
+    local XComGameStateVisualizationMgr VisMgr;
+    local X2Action_MarkerTreeInsertBegin MarkerStart;
+    local X2Action_Fire FoundFireAction;
+    local XComGameStateContext_Ability Context;
+    local array<X2Action> FoundActions;
+    local int ActionIndex;
+    local X2Action_ExitCover MyExitCover;
+
+    VisMgr = `XCOMVISUALIZATIONMGR;
+
+    MarkerStart = X2Action_MarkerTreeInsertBegin(VisMgr.GetNodeOfType(BuildTree, class'X2Action_MarkerTreeInsertBegin'));
+    MyExitCover = X2Action_ExitCover(VisMgr.GetNodeOfType(BuildTree, class'X2Action_ExitCover'));
+    Context = XComGameStateContext_Ability(MarkerStart.StateChangeContext);
+
+    VisMgr.GetNodesOfType(VisualizationTree, class'X2Action_Fire', FoundActions);
+    for (ActionIndex = 0; ActionIndex < FoundActions.Length; ++ActionIndex)
+    {
+        if (FoundActions[ActionIndex].StateChangeContext.AssociatedState.HistoryIndex == Context.DesiredVisualizationBlockIndex)
+        {
+            FoundFireAction = X2Action_Fire(FoundActions[ActionIndex]);
+            MarkerStart.AddInputEvent('Visualizer_AbilityHit');
+            MyExitCover.AddInputEvent('Visualizer_AbilityHit');
+            break;
+        }
+    }
+
+    if (FoundFireAction != none)
+    {
+        VisMgr.DisconnectAction(MarkerStart);
+        VisMgr.ConnectAction(MarkerStart, VisualizationTree, false, FoundFireAction);
+
+        VisMgr.DisconnectAction(MyExitCover);
+        VisMgr.ConnectAction(MyExitCover, VisualizationTree, false, FoundFireAction);
+    }
+    else
+    {
+        Context.SuperMergeIntoVisualizationTree(BuildTree, VisualizationTree);
+    }
+}
+
+static function X2AbilityTemplate HavocPassive()
+{
+    local X2AbilityTemplate Template;
+
+    Template = Passive('F_Havoc_Passive', "img:///UILibrary_XPerkIconPack.UIPerk_shot_suppression", `GetConfigBool("F_Havoc_bAWC"), true, true);
+
+    Template.DefaultSourceItemSlot = eInvSlot_PrimaryWeapon;
+
+    return Template;
 }
 
 // Finesse

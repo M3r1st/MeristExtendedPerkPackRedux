@@ -402,7 +402,14 @@ LocFriendlyName="Havoc"
 LocFlyOverText="Havoc"
 LocLongDescription="Your Suppression and Area Suppression abilities now deal guaranteed damage to the primary target."
 LocHelpText="Your Suppression and Area Suppression abilities now deal guaranteed damage to the primary target."
-LocPromotionPopupText="<Bullet> Deals <Ability:F_Havoc_Damage> damage to the primary target depending on the weapon tier."
+LocPromotionPopupText="<Bullet> Deals <Ability:F_Havoc_Damage> damage to the primary target depending on the technology level of your <Ability:F_BoundWeaponName>."
+
+[F_Havoc_Passive X2AbilityTemplate]
+LocFriendlyName="Havoc"
+LocFlyOverText="Havoc"
+LocLongDescription="Your Suppression and Area Suppression abilities now deal guaranteed damage to the primary target."
+LocHelpText="Your Suppression and Area Suppression abilities now deal guaranteed damage to the primary target."
+LocPromotionPopupText="<Bullet> Deals <Ability:F_Havoc_Damage> damage to the primary target depending on the technology level of your <Ability:F_BoundWeaponName>."
 
 [F_Finesse X2AbilityTemplate]
 LocFriendlyName="Finesse"
