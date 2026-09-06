@@ -10,7 +10,7 @@ LocFriendlyName="Chip Away"
 LocFlyOverText="Chip Away"
 LocLongDescription="Take a <Ability:F_BoundWeaponName> shot that shreds additional armor. Uses <Ability:F_SelfAmmoCost> ammo. Has a <Ability:F_SelfCooldown>-turn cooldown."
 LocHelpText="Special <Ability:F_BoundWeaponName> shot that shreds additional armor. Uses <Ability:F_SelfAmmoCost> ammo."
-LocPromotionPopupText="<Bullet> Shreds <Ability:F_ChipAway_ShredBonuses> additional armor depending on the weapon tier.<br><Bullet> Consumes <Ability:F_SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
+LocPromotionPopupText="<Bullet> Shreds <Ability:F_ChipAway_ShredBonuses> additional armor depending on the technology level of your <Ability:F_BoundWeaponName>.<br><Bullet> Consumes <Ability:F_SelfAmmoCost> ammo.<br><Bullet> Has a <Ability:F_SelfCooldown>-turn cooldown."
 
 [F_ChipAway_Bonuses X2AbilityTemplate]
 LocFriendlyName="Chip Away"
@@ -517,7 +517,7 @@ LocFriendlyName="Rally"
 LocFlyOverText="Rally"
 LocLongDescription="Embolden the resolve of all allies within <Ability:F_Rally_Radius> tile(s), granting them and yourself bonus Shield HP for <Ability:F_Rally_Duration> turn(s). Usable once per mission."
 LocHelpText="Grant <Ability:F_Rally_ShieldAmount> Shield HP to yourself and all allies within <Ability:F_Rally_Radius> tile(s) for <Ability:F_Rally_Duration> turn(s)."
-LocPromotionPopupText="<Bullet> Grants <Ability:F_Rally_ShieldAmount> Shield HP depending on the tier of your <Ability:F_BoundWeaponName>."
+LocPromotionPopupText="<Bullet> Grants <Ability:F_Rally_ShieldAmount> Shield HP depending on the technology level of your <Ability:F_BoundWeaponName>."
 
 [F_ShieldTrauma X2AbilityTemplate]
 LocFriendlyName="Shield Trauma"
@@ -716,7 +716,7 @@ LocFriendlyName="Intimidate"
 LocFlyOverText="Intimidate"
 LocLongDescription="When targeted by an attack, the enemy has a chance to panic."
 LocHelpText="When targeted by an attack, the enemy has a chance to panic."
-LocPromotionPopupText="<Bullet> Intimidate's chance to panic the attacker increases with the tier of your <Ability:F_BoundWeaponName>.<br><Bullet> Intimidate will not trigger when targeted by reaction fire."
+LocPromotionPopupText="<Bullet> Intimidate's chance to panic the attacker increases with the technology level of your <Ability:F_BoundWeaponName>.<br><Bullet> Intimidate will not trigger when targeted by reaction fire."
 
 [F_Intimidate_Trigger X2AbilityTemplate]
 LocFriendlyName="Intimidate"
