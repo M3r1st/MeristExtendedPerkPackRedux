@@ -20,22 +20,19 @@ function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit 
         {
             if (Target.CanTakeCover() && `TACTICALRULES.VisibilityMgr.GetVisibilityInfo(Attacker.ObjectID, Target.ObjectID, VisInfo))
             {
-                if (Target.GetCurrentStat(eStat_AlertLevel) != 0 || Target.GetTeam() == eTeam_XCom)
+                if (VisInfo.TargetCover == CT_Standing || VisInfo.TargetCover == CT_Midlevel && Target.bTreatLowCoverasHigh)
                 {
-                    if (VisInfo.TargetCover == CT_Standing || VisInfo.TargetCover == CT_Midlevel && Target.bTreatLowCoverasHigh)
-                    {
-                        ShotInfo.ModType = eHit_Success;
-                        ShotInfo.Reason = FriendlyName;
-                        ShotInfo.Value = class'X2AbilityToHitCalc_StandardAim'.default.HIGH_COVER_BONUS / 2;
-                        ShotModifiers.AddItem(ShotInfo);
-                    }
-                    else if (VisInfo.TargetCover == CT_Midlevel)
-                    {
-                        ShotInfo.ModType = eHit_Success;
-                        ShotInfo.Reason = FriendlyName;
-                        ShotInfo.Value = class'X2AbilityToHitCalc_StandardAim'.default.LOW_COVER_BONUS / 2;
-                        ShotModifiers.AddItem(ShotInfo);
-                    }
+                    ShotInfo.ModType = eHit_Success;
+                    ShotInfo.Reason = FriendlyName;
+                    ShotInfo.Value = class'X2AbilityToHitCalc_StandardAim'.default.HIGH_COVER_BONUS / 2;
+                    ShotModifiers.AddItem(ShotInfo);
+                }
+                else if (VisInfo.TargetCover == CT_Midlevel)
+                {
+                    ShotInfo.ModType = eHit_Success;
+                    ShotInfo.Reason = FriendlyName;
+                    ShotInfo.Value = class'X2AbilityToHitCalc_StandardAim'.default.LOW_COVER_BONUS / 2;
+                    ShotModifiers.AddItem(ShotInfo);
                 }
             }
         }

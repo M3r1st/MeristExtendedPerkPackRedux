@@ -7,7 +7,7 @@ function GetToHitModifiers(XComGameState_Effect EffectState, XComGameState_Unit 
 {
     local ShotModifierInfo AimInfo, CritInfo;
 
-    if (!Target.CanTakeCover())
+    if (!Target.GetMyTemplate().bCanTakeCover)
     {
         AimInfo.ModType = eHit_Success;
         AimInfo.Reason = FriendlyName;
